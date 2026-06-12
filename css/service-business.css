@@ -1,0 +1,479 @@
+/* ============================================================
+   SERVICE-BUSINESS.CSS — 事業者向けサービス ページ専用スタイル
+   ============================================================ */
+
+body {
+    padding-top: var(--header-h);
+}
+
+/* ============================================================
+   FV
+   ============================================================ */
+.p-fv {
+    background-color: var(--color-bg);
+    padding-top: clamp(48px, calc(72 / 1728 * 100vw), 72px);
+    overflow: hidden;
+}
+
+.p-fv__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    margin-bottom: clamp(116px, calc(382 / 1728 * 100vw), 382px);
+    padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, calc(48 / 1728 * 100vw), 48px);
+    min-height: clamp(336px, calc(538 / 1728 * 100vw), 538px);
+}
+
+.p-fv__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(10px, calc(14 / 1728 * 100vw), 14px);
+    padding-left: clamp(48px, calc(296 / 1728 * 100vw), 296px);
+}
+
+.c-label {
+    color: var(--color-accent-lime);
+}
+
+.p-fv__title {
+    color: var(--color-primary);
+    font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.p-fv__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-fv__visual img {
+    width: clamp(360px, 51.0417vw, 882px);
+    height: auto;
+    display: block;
+    transform: translate(-20%, 20%);
+}
+
+
+/* ============================================================
+   SERVICE BLOCKS（同業ならではの視点・デザイン・システム開発）
+   ============================================================ */
+.p-service-blocks {
+        display: flex;
+        flex-direction: column;
+}
+
+.p-service-blocks__item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: clamp(280px, calc(480 / 1728 * 100vw), 480px);
+}
+
+/* 写真エリア */
+.p-service-blocks__photo {
+        overflow: hidden;
+}
+
+.p-service-blocks__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* テキストブロック */
+.p-service-blocks__content {
+    display: flex;
+    align-items: center;
+    padding:
+        clamp(40px, calc(72 / 1728 * 100vw), 72px)
+        clamp(32px, calc(72 / 1728 * 100vw), 72px);
+}
+
+.p-service-blocks__content--green  { background-color: #B3D179; }
+.p-service-blocks__content--purple { background-color: #E1A2D8; }
+.p-service-blocks__content--blue   { background-color: #748BE5; }
+
+.p-service-blocks__text {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, calc(24 / 1728 * 100vw), 24px);
+}
+
+.p-service-blocks__heading {
+    font-size: clamp(22px, calc(42 / 1728 * 100vw), 42px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--color-white);
+}
+
+.p-service-blocks__desc {
+    font-size: clamp(13px, calc(15 / 1728 * 100vw), 15px);
+    line-height: 1.9;
+    color: var(--color-white);
+}
+
+/* ============================================================
+   WORKS
+   ============================================================ */
+.p-works {
+    background-color: var(--color-bg);
+    padding-block: clamp(80px, calc(120 / 1728 * 100vw), 120px);
+}
+
+.p-works__inner {
+    position: relative;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-right: clamp(4%, calc(15 / 1728 * 100vw), 15px);
+}
+
+.p-works__head {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, calc(80 / 1728 * 100vw), 80px);
+    margin-bottom: clamp(40px, calc(64 / 1728 * 100vw), 64px);
+}
+
+.p-works__text {
+    position: sticky;
+    top: 20vh;
+    left: 0;
+    max-width: clamp(265px, calc(354 / 1728 * 100vw), 354px);
+    padding-left: clamp(4%, calc(154 / 1728 * 100vw), 154px);
+}
+
+.p-works__label {
+    font-size: clamp(16px, calc(32 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    color: var(--color-primary);
+    display: block;
+    margin-bottom: clamp(12px, calc(20 / 1728 * 100vw), 20px);
+}
+
+.p-works__desc {
+    font-size: clamp(13px, calc(16 / 1728 * 100vw), 16px);
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.p-works__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(12px, calc(16 / 1728 * 100vw), 16px);
+}
+
+.p-works__img {
+    border-radius: clamp(8px, calc(12 / 1728 * 100vw), 12px);
+}
+
+.p-works__img img {
+    width: clamp(200px, calc(848 / 1728 * 100vw), 848px);
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.p-works__img:nth-of-type(2) {
+    transform: translateX(-20%);
+}
+
+
+.p-works__img--tall {
+    aspect-ratio: 3 / 4;
+}
+
+/* ============================================================
+   FAQ（よくある質問）
+   ============================================================ */
+.p-faq {
+    max-width: 848px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    color: #ffffff;
+}
+
+.p-faq__title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+}
+
+.p-faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.p-faq__item {
+    border: 2px solid var(--color-text);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-faq__item:hover {
+    border-color: #555555;
+}
+
+.p-faq__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    position: relative;
+    z-index: 2;
+}
+
+.p-faq__q::-webkit-details-marker { 
+    display: none; 
+}
+
+.p-faq__q-text {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-accent-lime);
+    padding-right: 20px;
+}
+
+/* アイコン（＋） */
+.p-faq__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--color-accent-lime);
+}
+
+.p-faq__icon::before,
+.p-faq__icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-faq__icon::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* 開いている時のアイコン変化 */
+.p-faq__item[open] .p-faq__icon::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+}
+
+/* アニメーション用ラッパー */
+.p-faq__a-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-faq__item[open] .p-faq__a-wrapper {
+    grid-template-rows: 1fr;
+}
+
+.p-faq__a-inner {
+    overflow: hidden;
+}
+
+.p-faq__a {
+    padding: 0 24px 24px;
+}
+
+.p-faq__a-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin: 0;
+}
+
+
+
+
+/* ============================================================
+   SP（768px以下）
+   ============================================================ */
+@media (max-width: 768px) {
+    .c-label {
+        text-align: center;
+    }
+
+  /* FV */
+    .p-fv {
+        padding-top: calc(32 / 390 * 100vw);
+    }
+
+    .p-fv__inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 0;
+        padding-inline: 20px;
+    }
+
+    .p-fv__text {
+        padding-bottom: calc(24 / 390 * 100vw);
+        gap: calc(8 / 390 * 100vw);
+        padding-left: 0;
+    }
+
+    .p-fv__title {
+        font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+        text-align: center;
+    }
+
+    .p-fv__visual {
+        justify-content: center;
+
+        & img {
+            max-width: calc(280 / 390 * 100vw);
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Service Blocks */
+    .p-service-blocks__item {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .p-service-blocks__photo {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* SP: 写真を常に上に */
+    .p-service-blocks__item--2 .p-service-blocks__photo {
+        order: -1;
+    }
+
+    .p-service-blocks__content {
+        min-height: calc(100vw * 3 / 4);
+        padding: calc(40 / 390 * 100vw) calc(20 / 390 * 100vw);
+    }
+
+    .p-service-blocks__heading {
+        font-size: calc(22 / 390 * 100vw);
+    }
+
+    .p-service-blocks__desc {
+        font-size: calc(13 / 390 * 100vw);
+    }
+
+    /* Works */
+    .p-works {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-works__inner {
+        padding-inline: 0;
+    }
+
+    .p-works__head {
+        grid-template-columns: 1fr;
+        gap: calc(24 / 390 * 100vw);
+        margin-bottom: calc(32 / 390 * 100vw);
+        padding-inline: 20px;
+    }
+
+    .p-works__text {
+        position: static;
+        padding-left: 0;
+    }
+
+    .p-works__grid {
+        grid-template-columns: 1fr;
+        gap: calc(12 / 390 * 100vw);
+    }
+
+    .p-works__img {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .p-works__img:nth-of-type(2) {
+        transform: translateX(-40px);
+    }
+
+
+    .p-works__img--tall {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* FAQ */
+    .p-faq {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-faq__inner {
+        padding-inline: 20px;
+    }
+
+    .p-faq__title {
+        font-size: calc(22 / 390 * 100vw);
+        margin-bottom: calc(32 / 390 * 100vw);
+    }
+
+    .p-faq__title { font-size: 24px; }
+    .p-faq__q-text { font-size: 16px; }
+    .p-faq__a-text { font-size: 14px; }
+    .p-faq__q { padding: 20px; }
+    .p-faq__a { padding: 0 20px 20px; }
+}
+
+/* ============================================================
+   1729px以上 — 固定サイズ
+   ============================================================ */
+@media (min-width: 1729px) {
+
+  /* FV */
+    .p-fv { padding-top: 72px; }
+    .p-fv__inner { padding-inline: 48px; gap: 48px; min-height: 440px; }
+    .p-fv__text { padding-bottom: 80px; gap: 14px; }
+    .p-fv__title { font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px); }
+    .p-fv__visual img { max-width: 540px; }
+
+    /* Service Blocks */
+    .p-service-blocks__item { min-height: 480px; }
+    .p-service-blocks__content { padding: 72px; }
+    .p-service-blocks__heading { font-size: 32px; }
+    .p-service-blocks__desc { font-size: 15px; }
+
+    /* Works */
+    .p-works { padding-block: 120px; }
+    .p-works__inner { padding-inline: 48px; }
+    .p-works__desc { font-size: 15px; }
+    .p-works__head { gap: 80px; margin-bottom: 64px; }
+
+    /* FAQ */
+    .p-faq { padding-block: 120px; }
+    .p-faq__inner { padding-inline: 48px; }
+    .p-faq__title { font-size: 36px; margin-bottom: 56px; }
+    .p-faq__q-text { font-size: 15px; }
+    .p-faq__a p { font-size: 15px; }
+
+    /* CTA */
+    .p-cta { padding-block: 100px; }
+    .p-cta__inner { padding-inline: 48px; gap: 72px; }
+    .p-cta__title { font-size: 36px; }
+    .p-cta__visual { width: 200px; }
+}

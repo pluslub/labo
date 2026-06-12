@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | Plusらぼ</title>
+    <meta name="description" content="Plusらぼへのお問い合わせはこちらから。見学・体験のご相談など、お気軽にお問い合わせください。">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css?v=20260606">
+    <link rel="stylesheet" href="css/contact.css?v=20260605">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEXX84LLRY"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GEXX84LLRY');
+    </script>
+  </head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="header__logo">
+            <img src="./assets/images/logo_01.png" alt="ロゴ">
+        </div>
+
+        <div class="header__right">
+            <a href="contact.html" class="header__contact">
+                お問い合わせ
+                <span class="header__contact-btn"></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
+                <div class="menu-toggle__icon" id="toggleIcon">
+                    <div class="circle circle--outer"></div>
+                    <div class="circle circle--middle"></div>
+                    <div class="circle circle--inner"></div>
+                </div>
+                <span class="menu-toggle__text" id="toggleText">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <div class="menu-left">
+                <h2 class="menu-title">常時<br>見学・体験<br>受付中</h2>
+                <p class="menu-desc">わからないことや、ご相談でも大丈夫です。<br>お気軽にお問い合わせください。</p>
+                <a href="contact.html" class="menu-contact-btn">お問い合わせ</a>
+            </div>
+            <div class="menu-links">
+                <a href="index.html" class="menu-link-item">トップ</a>
+                <a href="about.html" class="menu-link-item">Plusらぼについて</a>
+                <a href="service-business.html" class="menu-link-item">事業者向けサービス</a>
+                <a href="service-work.html" class="menu-link-item">就労支援サービス</a>
+                <a href="#" class="menu-link-item">コラム</a>
+                <a href="news/" class="menu-link-item">お知らせ</a>
+            </div>
+        </div>
+        <div class="menu-footer-logo">
+            <div>
+                <img src="./assets/images/logo_01.png" alt="ロゴ">
+            </div>
+        </div>
+    </nav>
+
+<main>
+
+    <!-- ========== FV ========== -->
+    <section class="p-fv">
+      <div class="p-fv__inner">
+        <div class="p-fv__text">
+          <span class="c-label">Inquiry</span>
+          <h1 class="p-fv__title">お問い合わせ</h1>
+        </div>
+        <div class="p-fv__visual" aria-hidden="true">
+          <img src="./assets/images/contact-fv.svg" alt="" class="p-fv__illust">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FORM ========== -->
+    <section class="p-form">
+      <div class="p-form__inner">
+        <form class="p-form__body" action="#" method="post" novalidate>
+          <div class="p-form__field">
+            <label class="p-form__label" for="name">お名前</label>
+            <input
+              class="p-form__input"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="お名前"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="p-form__field">
+            <label class="p-form__label" for="tel">電話番号</label>
+            <input
+              class="p-form__input"
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="電話番号"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="p-form__field">
+            <label class="p-form__label" for="email">メールアドレス</label>
+            <input
+              class="p-form__input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="メールアドレス"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="p-form__field">
+            <label class="p-form__label" for="message">お問い合わせ内容</label>
+            <textarea
+              class="p-form__textarea"
+              id="message"
+              name="message"
+              placeholder="お問い合わせ内容"
+              rows="8"
+              required
+            ></textarea>
+          </div>
+
+          <div class="p-form__submit">
+            <button type="submit" class="p-form__submit-btn">送信する</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="p-cta">
+      <div class="p-cta__inner">
+        <div class="p-cta__visual">
+          <img src="./assets/images/cta-illust.png" alt="">
+        </div>
+        <div class="p-cta__body">
+          <h2 class="p-cta__title">ちょっとしたことでも<br>ご相談ください</h2>
+          <p class="p-cta__text">気になることや、体験に関するご相談は常時受け付けておりますので、遠慮なくお問い合わせください。</p>
+          <a href="contact.html" class="c-btn c-btn--dark">
+            話を聞いてみる
+            <span class="c-btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/><path d="M13 10L19 16L13 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="l-footer">
+    <div class="l-footer__inner">
+      <div class="l-footer__top">
+        <a href="index.html" class="l-footer__logo" aria-label="Plusらぼ トップへ">
+          <div class="l-footer__logo-placeholder"></div>
+        </a>
+        <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+          <ul class="l-footer__nav-list">
+            <li><a href="index.html"            class="l-footer__nav-link">トップ</a></li>
+                        <li><a href="https://www.wakatake.info/"                     class="l-footer__nav-link">法人サイト</a></li>
+            <li><a href="service-business.html" class="l-footer__nav-link">開発業務について</a></li>
+            <li><a href="about.html"            class="l-footer__nav-link">Plusらぼについて</a></li>
+            <li><a href="column/"               class="l-footer__nav-link">コラム</a></li>
+            <li><a href="news/"                 class="l-footer__nav-link">お知らせ</a></li>
+            <li><a href="contact.html"          class="l-footer__nav-link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="l-footer__bottom">
+        <address class="l-footer__address">
+          〒525-0022<br>
+          滋賀県草津市川原町298-1 2F<br>
+          tel：<a href="tel:0775695697">077-569-5697</a><br>
+          mail：<a href="mailto:example@mail.com">example@mail.com</a>
+        </address>
+        <div class="l-footer__legal">
+          <a href="privacy.html" class="l-footer__privacy">プライバシーポリシー</a>
+          <small class="l-footer__copy">©2026　plus lab</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20260605"></script>
+</body>
+</html>

@@ -1,0 +1,757 @@
+/*
+Theme Name: Lightning Child
+Theme URI: 
+Template: lightning
+Description: 
+Author: 
+Tags: 
+Version: 0.6.0
+*/
+
+/* Google Fonts: Noto Sans JP */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+
+html, body {
+    font-family: 'Noto Sans JP', system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* エントリ本文のベースフォント */
+.entry-body {
+    font-family: 'Noto Sans JP', system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 13px;
+}
+
+/* ==========================================================================
+   1. サイト全体
+   ========================================================================== */
+
+.site-body {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* ==========================================================================
+   2. ヘッダー
+   ========================================================================== */
+
+/* Lightningの標準ヘッダーを非表示 */
+header#site-header,
+.site-header,
+.siteHeader {
+    display: none !important;
+}
+
+/* カスタムヘッダー */
+.header-fixed-layout {
+    display: block !important;
+    background: none;
+    width: 100%;
+}
+
+.header-inner {
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 20px 3.76vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area img {
+    width: 200px !important;
+    height: auto !important;
+}
+
+/* MENUボタン */
+#vk-mobile-nav-menu-btn,
+.vk-mobile-nav-menu-btn {
+    display: none !important;
+    flex-direction: column;
+    align-items: center;
+    position: fixed !important;
+    top: 20px !important;
+    right: 3.76vw !important;
+    left: auto !important;
+    z-index: 99999 !important;
+    width: 50px !important;
+    height: 50px !important;
+    background-image: url('http://xs888688.xsrv.jp/pluslab-test/wp-content/uploads/2026/05/menu.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+    border: none !important;
+    text-indent: -9999px !important;
+}
+
+.admin-bar #vk-mobile-nav-menu-btn,
+.admin-bar .vk-mobile-nav-menu-btn {
+    top: 52px !important;
+}
+
+.vk-mobile-nav-menu-btn::before {
+    content: none !important;
+}
+
+/* PCでもモバイルナビを開けるようにする */
+#vk-mobile-nav {
+    display: block !important;
+}
+
+/* ==========================================================================
+   3. フッター
+   ========================================================================== */
+
+/* Lightningのフッターを非表示 */
+.site-footer,
+.site-footer-copyright,
+.footer-widget-area {
+    display: none !important;
+}
+
+/* カスタムフッター */
+.custom-footer-wrapper {
+    display: block !important;
+    background-color: #424242;
+    padding: 40px 0;
+    color: #fff;
+}
+
+.custom-footer-main {
+    display: flex;
+    justify-content: center;
+    gap: 8vw;
+    align-items: flex-start;
+    padding: 40px 0;
+}
+
+.footer-address {
+    margin-top: 20px;
+    line-height: 1.8;
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer-column-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    max-width: 800px;
+    font-size: 14px;
+}
+
+.footer-column-menu a {
+    color: #fff !important;
+}
+
+.footer-nav-row1,
+.footer-nav-row2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-nav-row3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 60px;
+}
+
+/* ==========================================================================
+   4. コンテンツタイトル
+   ========================================================================== */
+
+h1.entry-title {
+    position: relative !important;
+    color: #005149 !important;
+    font-weight: bold !important;
+    line-height: 1.4 !important;
+    padding-top: 1.5vw !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+h1.entry-title::before {
+    content: "Detail" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    color: #9ccc65 !important;
+    font-size: 11px !important;
+    font-weight: bold !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* ==========================================================================
+   5. ポートフォリオ詳細ページ
+   ========================================================================== */
+
+.entry-header {
+    display: none !important;
+}
+
+#main .portfolio-detail-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 48px !important;
+    width: 100% !important;
+    margin-top: 12.78vw !important;
+    margin-bottom: 14.29vw !important;
+}
+
+.portfolio-detail-left {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+.portfolio-detail-right {
+    flex: 0 0 400px !important;
+    width: 400px !important;
+    font-size:13px !important;
+}
+
+/* ==========================================================================
+   6. ポートフォリオ一覧（カテゴリテンプレート）
+   ========================================================================== */
+
+.portfolio-header {
+    padding: 40px 0 20px;
+}
+
+.portfolio-header .gallery-label {
+    color: #7cb342;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.portfolio-header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+
+.portfolio-header .portfolio-description {
+    font-size: 13px;
+    color: #888;
+}
+
+.portfolio-header h1.entry-title::before {
+    content: "portfolio" !important;
+/*    font-size: 1.25vw !important;*/
+}
+
+/* フィルターボタン */
+.portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0 20px;
+}
+
+.portfolio-filter a {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    background: #eee;
+    color: #333;
+    transition: background 0.2s, color 0.2s;
+}
+
+.portfolio-filter a.active,
+.portfolio-filter a:hover {
+    background: #E29339;
+    color: #fff;
+}
+
+/* グリッドレイアウト */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 100px !important;
+}
+
+.portfolio-grid-item a {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: #f0f0f0;
+}
+
+.portfolio-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.portfolio-grid-item a:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-grid-item .no-thumbnail {
+    width: 100%;
+    height: 100%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 12px;
+}
+p.no-posts {
+	margin:100px auto !important;
+}
+/* 最新の投稿タイトル非表示 */
+ul.wp-block-latest-posts.gallery .wp-block-latest-posts__post-title {
+    display: none !important;
+}
+
+/* ==========================================================================
+   7. 前後記事ナビゲーション
+   ========================================================================== */
+
+div.vk_posts.next-prev {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 4% !important;
+    padding: 60px 0 !important;
+    flex-wrap: nowrap !important;
+}
+
+div.vk_posts.next-prev > div:not([class*="next-prev-"]) {
+    display: block !important;
+    flex: 0 0 48% !important;
+    max-width: 48% !important;
+    width: 48% !important;
+    visibility: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    float: none !important;
+}
+
+div.vk_posts.next-prev .next-prev-prev,
+div.vk_posts.next-prev .next-prev-next {
+    flex: 0 0 48% !important;
+    max-width: 48% !important;
+    width: 48% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    float: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+div.vk_posts.next-prev .next-prev-prev {
+    background-image: url('http://xs888688.xsrv.jp/pluslab-test/wp-content/uploads/2026/05/prev.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+    padding: 40px 25px 55px 25px !important;
+}
+
+div.vk_posts.next-prev .next-prev-next {
+    background-image: url('http://xs888688.xsrv.jp/pluslab-test/wp-content/uploads/2026/05/next.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+    padding: 40px 25px 55px 25px !important;
+}
+
+div.vk_posts.next-prev .vk_post_body.card-body {
+    display: none !important;
+}
+
+div.vk_posts.next-prev .vk_post_imgOuter {
+    background-image: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 220px !important;
+    margin: 0 auto !important;
+    overflow: visible !important;
+    position: relative !important;
+    top: -40px !important;
+}
+
+div.vk_posts.next-prev .vk_post_imgOuter a {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+}
+
+div.vk_posts.next-prev .vk_post_imgOuter_img.card-img-top {
+    position: static !important;
+    top: auto !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+div.vk_posts.next-prev .card-img-overlay {
+    position: static !important;
+    background: none !important;
+    padding: 0 !important;
+    margin-top: 35px !important;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+}
+
+div.vk_posts.next-prev .custom-next-prev-label {
+    position: static !important;
+    color: #333333 !important;
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    display: block !important;
+}
+
+div.vk_posts.next-prev .next-prev-prev:hover,
+div.vk_posts.next-prev .next-prev-next:hover {
+    transform: translateY(-5px) !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* ==========================================================================
+   8. カスタムCTA
+   ========================================================================== */
+
+h2.custom-cta-title,
+.site-body h2.custom-cta-title,
+.entry-content h2.custom-cta-title {
+    border: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    color: #004d40 !important;
+    font-size: 1.62vw !important;
+    font-weight: bold !important;
+    line-height: 1.4 !important;
+    margin: 0 0 1.2vw 0 !important;
+    text-align: left !important;
+    letter-spacing: 0.05em !important;
+}
+
+h2.custom-cta-title::before,
+h2.custom-cta-title::after {
+    content: none !important;
+    display: none !important;
+}
+
+.custom-cta-container {
+    width: 100%;
+    padding: 4vw 20px;
+    box-sizing: border-box;
+}
+
+.custom-cta-inner {
+    width: 42.82vw;
+    max-width: 740px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.31vw;
+}
+
+.custom-cta-image {
+    flex: 0 0 17.94vw;
+    max-width: 42%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-cta-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.custom-cta-content {
+    flex: 0 0 22.57vw;
+    max-width: 53%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.custom-cta-title {
+    color: #004d40;
+    font-size: 1.62vw;
+    font-weight: bold;
+    line-height: 1.4;
+    margin: 0 0 1.2vw 0 !important;
+    padding: 0;
+}
+
+.custom-cta-text {
+    color: #333333;
+    font-size: 0.86vw;
+    line-height: 1.7;
+    margin: 0 0 2.3vw 0 !important;
+}
+
+.custom-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1vw;
+    text-decoration: none !important;
+    border-bottom: 2px solid #333333;
+    padding-bottom: 0.4vw;
+    transition: all 0.3s ease;
+}
+
+.custom-cta-button-text {
+    color: #333333 !important;
+    font-size: 1.04vw;
+    font-weight: bold;
+}
+
+.custom-cta-button-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2vw;
+    height: 1.62vw;
+    background-color: #424242;
+    color: #ffffff;
+    border-radius: 1.5vw;
+    transition: transform 0.3s ease;
+}
+
+.custom-cta-button-arrow svg {
+    width: 0.92vw;
+    height: 0.92vw;
+}
+
+.custom-cta-button:hover {
+    opacity: 0.8;
+}
+
+.custom-cta-button:hover .custom-cta-button-arrow {
+    transform: translateX(0.4vw);
+}
+
+/* ==========================================================================
+   9. レスポンシブ
+   ========================================================================== */
+
+/* ==========================================================================
+   10. コラム（portfolio-intro）
+   ========================================================================== */
+
+.portfolio-intro {
+    max-width: 900px;
+    margin: 24px 0 40px;
+    color: #333333;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.portfolio-intro p {
+    margin: 0 0 1em;
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.portfolio-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-intro .signature {
+    margin-top: 1em;
+    font-weight: 500;
+}
+.portfolio-intro h2 {
+    font-size: clamp(16px, calc(36 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #004d40;
+    margin: 10px 0;
+}
+
+
+/* 1728px以上 */
+@media (min-width: 1728px) {
+    h1.entry-title {
+        padding-top: 26px !important;
+    }
+
+    h1.entry-title::before {
+        font-size: 16px !important;
+    }
+
+    .custom-cta-inner {
+        width: 740px !important;
+    }
+
+    .custom-cta-title {
+        font-size: 28px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .custom-cta-text {
+        font-size: 15px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .custom-cta-button {
+        gap: 15px !important;
+        padding-bottom: 6px !important;
+    }
+
+    .custom-cta-button-text {
+        font-size: 18px !important;
+    }
+
+    .custom-cta-button-arrow {
+        width: 38px !important;
+        height: 28px !important;
+        border-radius: 20px !important;
+    }
+
+    .custom-cta-button-arrow svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
+/* タブレット */
+@media (max-width: 1024px) {
+    #main .portfolio-detail-container {
+        flex-direction: column !important;
+    }
+
+    .portfolio-detail-right {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+    }
+}
+
+/* スマートフォン */
+@media (max-width: 767px) {
+    .logo-area img {
+        width: 100px !important;
+    }
+
+    #vk-mobile-nav-menu-btn,
+    .vk-mobile-nav-menu-btn,
+    .admin-bar #vk-mobile-nav-menu-btn,
+    .admin-bar .vk-mobile-nav-menu-btn {
+        width: 10vw !important;
+        height: 10vw !important;
+        /*top: 60px !important;*/
+    }
+
+    h1.entry-title {
+        padding-top: 4vw !important;
+    }
+
+    h1.entry-title::before {
+        font-size: 3vw !important;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-footer-main {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .footer-column-menu,
+    .footer-column-info {
+        width: 100%;
+    }
+
+    .footer-column-info {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .footer-logo img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .footer-nav-row1,
+    .footer-nav-row2 {
+        flex-wrap: wrap;
+        gap: 12px 0;
+    }
+
+    .footer-nav-row1 a,
+    .footer-nav-row2 a {
+        width: 50%;
+    }
+
+    .footer-nav-row3 {
+        display: none !important;
+    }
+	
+	div.vk_posts.next-prev {
+		padding: 0 !important;
+	}
+    /* 前後記事ナビの画像サイズを縮小 */
+    div.vk_posts.next-prev .vk_post_imgOuter {
+        max-width: 100px !important;
+		top: -5px !important;
+    }
+    .custom-cta-inner {
+        width: 100% !important;
+        gap: 4vw !important;
+    }
+
+    .custom-cta-image {
+        flex: 0 0 45% !important;
+        max-width: 45% !important;
+    }
+
+    .custom-cta-content {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .custom-cta-title {
+        font-size: 3.5vw !important;
+    }
+
+    .custom-cta-text {
+        font-size: 2.5vw !important;
+    }
+
+    .custom-cta-button-text {
+        font-size: 3vw !important;
+    }
+    h2.custom-cta-title,
+    .site-body h2.custom-cta-title,
+    .entry-content h2.custom-cta-title {
+        font-size: 3.5vw !important;
+    }
+}
