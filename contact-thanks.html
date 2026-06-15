@@ -1,15 +1,12 @@
-<?php
-$has_error  = isset($_GET['error']) && $_GET['error'] === '1';
-$send_error = isset($_GET['error']) && $_GET['error'] === '2';
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./assets/images/favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ | Plusらぼ</title>
-    <meta name="description" content="Plusらぼへのお問い合わせはこちらから。見学・体験のご相談など、お気軽にお問い合わせください。">
+    <title>送信完了 | Plusらぼ</title>
+    <meta name="description" content="お問い合わせありがとうございます。送信が完了しました。">
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,22 +16,38 @@ $send_error = isset($_GET['error']) && $_GET['error'] === '2';
     <!-- CSS -->
     <link rel="stylesheet" href="css/common.css?v=20260606">
     <link rel="stylesheet" href="css/contact.css?v=20260615">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEXX84LLRY"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-GEXX84LLRY');
+
+    // GA4 コンバージョンイベント（Google広告とGA4を連携している場合はこれで計測可能）
+    gtag('event', 'generate_lead', {
+        event_category: 'contact',
+        event_label: 'form_submit'
+    });
+
+    // ★ Google広告の直接タグを使う場合は以下のコメントを外して設定してください
+    // 管理画面「ツールと設定 → コンバージョン」で取得したIDとラベルを入力してください
+    /*
+    gtag('event', 'conversion', {
+        send_to: 'AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXXXXX'
+    });
+    */
     </script>
-  </head>
+</head>
 <body>
 
     <!-- ========== HEADER ========== -->
     <header class="header" id="header">
         <div class="header__logo">
-            <img src="./assets/images/logo_01.png" alt="ロゴ">
+            <a href="index.html" aria-label="Plusらぼ トップへ">
+                <img src="./assets/images/logo_01.png" alt="ロゴ">
+            </a>
         </div>
 
         <div class="header__right">
@@ -83,8 +96,8 @@ $send_error = isset($_GET['error']) && $_GET['error'] === '2';
     <section class="p-fv">
       <div class="p-fv__inner">
         <div class="p-fv__text">
-          <span class="c-label">Inquiry</span>
-          <h1 class="p-fv__title">お問い合わせ</h1>
+          <span class="c-label">Thank you</span>
+          <h1 class="p-fv__title">送信完了</h1>
         </div>
         <div class="p-fv__visual" aria-hidden="true">
           <img src="./assets/images/contact-fv.svg" alt="" class="p-fv__illust">
@@ -92,99 +105,25 @@ $send_error = isset($_GET['error']) && $_GET['error'] === '2';
       </div>
     </section>
 
-    <!-- ========== FORM ========== -->
-    <section class="p-form">
-      <div class="p-form__inner">
-        <?php if ($has_error): ?>
-          <div class="p-form__alert" role="alert">
-            <p>入力内容に不備があります。必須項目をご確認の上、再度お送りください。</p>
-          </div>
-        <?php elseif ($send_error): ?>
-          <div class="p-form__alert" role="alert">
-            <p>送信中にエラーが発生しました。時間をおいて再度お試しいただくか、お電話（077-569-5697）にてお問い合わせください。</p>
-          </div>
-        <?php endif; ?>
-
-        <form class="p-form__body" action="contact-send.php" method="post">
-          <div class="p-form__field">
-            <label class="p-form__label" for="name">お名前</label>
-            <input
-              class="p-form__input"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="お名前"
-              autocomplete="name"
-              required
-            >
-          </div>
-
-          <div class="p-form__field">
-            <label class="p-form__label" for="tel">電話番号</label>
-            <input
-              class="p-form__input"
-              type="tel"
-              id="tel"
-              name="tel"
-              placeholder="電話番号"
-              autocomplete="tel"
-            >
-          </div>
-
-          <div class="p-form__field">
-            <label class="p-form__label" for="email">メールアドレス</label>
-            <input
-              class="p-form__input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="メールアドレス"
-              autocomplete="email"
-              required
-            >
-          </div>
-
-          <div class="p-form__field">
-            <label class="p-form__label" for="message">お問い合わせ内容</label>
-            <textarea
-              class="p-form__textarea"
-              id="message"
-              name="message"
-              placeholder="お問い合わせ内容"
-              rows="8"
-              required
-            ></textarea>
-          </div>
-
-          <!-- ハニーポット（ボットトラップ） -->
-          <div style="display:none" aria-hidden="true">
-            <label for="website">ウェブサイト</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-
-          <div class="p-form__submit">
-            <button type="submit" class="p-form__submit-btn">送信する</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ========== CTA ========== -->
-    <section class="p-cta">
-      <div class="p-cta__inner">
-        <div class="p-cta__visual">
-          <img src="./assets/images/cta-illust.png" alt="">
+    <!-- ========== THANKS ========== -->
+    <section class="p-thanks">
+      <div class="p-thanks__inner">
+        <div class="p-thanks__icon" aria-hidden="true">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="39" stroke="#A8BD38" stroke-width="2"/>
+            <path d="M22 41L34 53L58 29" stroke="#A8BD38" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
-        <div class="p-cta__body">
-          <h2 class="p-cta__title">ちょっとしたことでも<br>ご相談ください</h2>
-          <p class="p-cta__text">気になることや、体験に関するご相談は常時受け付けておりますので、遠慮なくお問い合わせください。</p>
-          <a href="contact.html" class="c-btn c-btn--dark">
-            話を聞いてみる
-            <span class="c-btn__icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.5"/><path d="M13 10L19 16L13 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-          </a>
-        </div>
+        <h2 class="p-thanks__title">お問い合わせありがとうございます</h2>
+        <p class="p-thanks__text">
+          入力いただいたメールアドレスへ確認メールをお送りしました。<br>
+          内容を確認の上、担当者よりご連絡いたします。<br>
+          今しばらくお待ちください。
+        </p>
+        <a href="index.html" class="c-btn c-btn--dark">
+          トップページへ戻る
+          <span class="c-btn__icon" aria-hidden="true"></span>
+        </a>
       </div>
     </section>
 
@@ -200,7 +139,7 @@ $send_error = isset($_GET['error']) && $_GET['error'] === '2';
         <nav class="l-footer__nav" aria-label="フッターナビゲーション">
           <ul class="l-footer__nav-list">
             <li><a href="index.html"            class="l-footer__nav-link">トップ</a></li>
-                        <li><a href="https://www.wakatake.info/"                     class="l-footer__nav-link">法人サイト</a></li>
+            <li><a href="https://www.wakatake.info/"                     class="l-footer__nav-link">法人サイト</a></li>
             <li><a href="service-business.html" class="l-footer__nav-link">開発業務について</a></li>
             <li><a href="about.html"            class="l-footer__nav-link">Plusらぼについて</a></li>
             <li><a href="column/"               class="l-footer__nav-link">コラム</a></li>
