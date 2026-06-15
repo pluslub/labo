@@ -1,0 +1,292 @@
+/* ============================================================
+   CONTACT.CSS — お問い合わせ ページ専用スタイル
+   ============================================================ */
+
+body {
+  padding-top: var(--header-h);
+}
+
+/* ============================================================
+   FV
+   ============================================================ */
+.p-fv {
+  background-color: var(--color-bg);
+  padding-top: clamp(48px, calc(72 / 1728 * 100vw), 72px);
+  overflow: hidden;
+}
+
+.p-fv__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(24px, calc(48 / 1728 * 100vw), 48px);
+  min-height: clamp(300px, calc(440 / 1728 * 100vw), 440px);
+}
+
+.p-fv__text {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, calc(14 / 1728 * 100vw), 14px);
+  padding-bottom: clamp(48px, calc(80 / 1728 * 100vw), 80px);
+}
+
+.p-fv__title {
+  font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-primary);
+}
+
+.p-fv__visual {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.p-fv__illust {
+  width: 100%;
+  max-width: clamp(300px, calc(520 / 1728 * 100vw), 520px);
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.p-form {
+  background-color: var(--color-bg);
+  padding-block: clamp(80px, calc(140 / 1728 * 100vw), 140px);
+}
+
+.p-form__inner {
+  max-width: 680px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+}
+
+.p-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, calc(20 / 1728 * 100vw), 20px);
+}
+
+.p-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.p-form__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.p-form__input,
+.p-form__textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--color-accent-lime);
+  border-radius: 4px;
+  padding: clamp(12px, calc(16 / 1728 * 100vw), 16px) clamp(14px, calc(18 / 1728 * 100vw), 18px);
+  font-family: var(--font-base);
+  font-size: clamp(13px, calc(15 / 1728 * 100vw), 15px);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s ease;
+
+  &::placeholder {
+    color: #aaa;
+  }
+
+  &:focus {
+    border-color: var(--color-primary);
+  }
+}
+
+.p-form__textarea {
+  resize: vertical;
+  min-height: clamp(160px, calc(220 / 1728 * 100vw), 220px);
+  line-height: 1.75;
+}
+
+.p-form__submit {
+  padding-top: clamp(4px, calc(8 / 1728 * 100vw), 8px);
+}
+
+.p-form__submit-btn {
+  display: block;
+  width: 100%;
+  padding: clamp(14px, calc(18 / 1728 * 100vw), 18px);
+  background-color: #e8a040;
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-base);
+  font-size: clamp(14px, calc(16 / 1728 * 100vw), 16px);
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: opacity 0.25s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+/* ============================================================
+   CTA
+   ============================================================ */
+.p-cta {
+  background-color: var(--color-bg-sub);
+  padding-block: clamp(56px, calc(100 / 1728 * 100vw), 100px);
+}
+
+.p-cta__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(32px, calc(72 / 1728 * 100vw), 72px);
+}
+
+.p-cta__visual {
+  width: clamp(120px, calc(200 / 1728 * 100vw), 200px);
+  flex-shrink: 0;
+
+  & img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.p-cta__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, calc(20 / 1728 * 100vw), 20px);
+}
+
+.p-cta__title {
+  font-size: clamp(22px, calc(36 / 1728 * 100vw), 36px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-primary);
+}
+
+.p-cta__text {
+  font-size: clamp(13px, calc(15 / 1728 * 100vw), 15px);
+  line-height: 1.85;
+}
+
+/* ============================================================
+   SP (768px以下)
+   ============================================================ */
+@media (max-width: 768px) {
+    .c-label {
+        text-align: center;
+    }
+
+  /* FV */
+  .p-fv {
+    padding-top: calc(32 / 390 * 100vw);
+  }
+
+  .p-fv__inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: calc(32 / 390 * 100vw);
+    padding-inline: 20px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .p-fv__text {
+    padding-bottom: 0;
+    gap: calc(8 / 390 * 100vw);
+    align-items: center;
+      padding-left: 0;
+  }
+
+  .p-fv__title {
+    font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+        text-align: center;
+  }
+
+  .p-fv__visual {
+    justify-content: center;
+  }
+
+  .p-fv__illust {
+    max-width: calc(300 / 390 * 100vw);
+  }
+
+  /* Form */
+  .p-form {
+    padding-block: calc(56 / 390 * 100vw);
+  }
+
+  .p-form__inner {
+    padding-inline: 20px;
+  }
+
+  .p-form__input,
+  .p-form__textarea {
+    font-size: calc(14 / 390 * 100vw);
+  }
+
+  /* CTA */
+  .p-cta {
+    padding-block: calc(48 / 390 * 100vw);
+  }
+
+  .p-cta__inner {
+    grid-template-columns: 1fr;
+    padding-inline: 20px;
+    gap: calc(24 / 390 * 100vw);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .p-cta__visual {
+    width: calc(140 / 390 * 100vw);
+  }
+
+  .p-cta__title {
+    font-size: calc(22 / 390 * 100vw);
+  }
+}
+
+/* ============================================================
+   1729px以上 — 固定サイズ
+   ============================================================ */
+@media (min-width: 1729px) {
+
+  /* FV */
+  .p-fv { padding-top: 72px; }
+  .p-fv__inner { padding-inline: 48px; gap: 48px; min-height: 440px; }
+  .p-fv__text { padding-bottom: 80px; gap: 14px; }
+  .p-fv__title { font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px); }
+  .p-fv__illust { max-width: 520px; }
+
+  /* Form */
+  .p-form { padding-block: 140px; }
+  .p-form__input,
+  .p-form__textarea { font-size: 15px; padding: 16px 18px; }
+  .p-form__textarea { min-height: 220px; }
+  .p-form__body { gap: 20px; }
+
+  /* CTA */
+  .p-cta { padding-block: 100px; }
+  .p-cta__inner { padding-inline: 48px; gap: 72px; }
+  .p-cta__title { font-size: 36px; }
+  .p-cta__visual { width: 200px; }
+}

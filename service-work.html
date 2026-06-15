@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>就労支援サービス | Plusらぼ</title>
+    <meta name="description" content="Plusらぼの就労支援サービスのご案内。就労継続支援B型・就労移行支援・就労定着支援を提供。自宅からオンラインで参加でき、ITスキルを身につけながら就職を目指せます。">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css?v=20260606">
+    <link rel="stylesheet" href="css/service-work.css?v=20260605">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEXX84LLRY"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GEXX84LLRY');
+    </script>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="header__logo">
+            <img src="./assets/images/logo_01.png" alt="ロゴ">
+        </div>
+
+        <div class="header__right">
+            <a href="contact.html" class="header__contact">
+                お問い合わせ
+                <span class="header__contact-btn"></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く">
+                <div class="menu-toggle__icon" id="toggleIcon">
+                    <div class="circle circle--outer"></div>
+                    <div class="circle circle--middle"></div>
+                    <div class="circle circle--inner"></div>
+                </div>
+                <span class="menu-toggle__text" id="toggleText">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <div class="menu-left">
+                <h2 class="menu-title">常時<br>見学・体験<br>受付中</h2>
+                <p class="menu-desc">わからないことや、ご相談でも大丈夫です。<br>お気軽にお問い合わせください。</p>
+                <a href="contact.html" class="menu-contact-btn">お問い合わせ</a>
+            </div>
+            <div class="menu-links">
+                <a href="index.html" class="menu-link-item">トップ</a>
+                <a href="about.html" class="menu-link-item">Plusらぼについて</a>
+                <a href="service-business.html" class="menu-link-item">事業者向けサービス</a>
+                <a href="service-work.html" class="menu-link-item">就労支援サービス</a>
+                <a href="#" class="menu-link-item">コラム</a>
+                <a href="news/" class="menu-link-item">お知らせ</a>
+            </div>
+        </div>
+        <div class="menu-footer-logo">
+            <div>
+                <img src="./assets/images/logo_01.png" alt="ロゴ">
+            </div>
+        </div>
+    </nav>
+
+<main>
+
+    <!-- ========== FV ========== -->
+    <section class="p-fv">
+        <div class="p-fv__inner">
+            <div class="p-fv__text">
+                <span class="c-label">Service</span>
+                <h1 class="p-fv__title">就労支援サービス</h1>
+            </div>
+            <div class="p-fv__visual" aria-hidden="true">
+                <img src="./assets/images/service-welfare.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WORK ========== -->
+    <section class="p-work">
+        <div class="p-work__inner">
+            <div class="p-work__text">
+                <h2 class="p-work__title">Plusらぼでの作業</h2>
+                <p class="p-work__desc">デザインツールを使ったビジュアル制作や、データの整理・管理といったPC作業を中心に行っています。作業の内容はスタッフと相談しながら決めるため、はじめてパソコンを使う方でも安心してトレーニングを進めることができます。</p>
+                <a href="#" class="c-btn c-btn--dark">
+                    詳しく見る
+                    <span class="c-btn__icon" aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="p-work__slider-wrap" data-lenis-prevent>
+                <div class="swiper p-work__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide p-work__slide">
+                            <div class="p-work__sample-img">
+                                <img src="./assets/images/service-welfare-slide.jpg" alt="デザイン作業の様子">
+                            </div>
+                            <p class="p-work__sample-label">デザイン</p>
+                        </div>
+                        <div class="swiper-slide p-work__slide">
+                            <div class="p-work__sample-img">
+                                <img src="./assets/images/service-welfare-slide-2.jpg" alt="制度スケジュール管理の様子">
+                            </div>
+                            <p class="p-work__sample-label">制度スケジュール管理</p>
+                        </div>
+                        <div class="swiper-slide p-work__slide">
+                            <div class="p-work__sample-img">
+                                <img src="./assets/images/service-welfare-slide-3.jpg" alt="WordPressの作業の様子">
+                            </div>
+                            <p class="p-work__sample-label">WordPress</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TIMELINE ========== -->
+    <section class="p-timeline">
+        <div class="p-timeline__inner">
+            <div class="p-timeline__text">
+                <h2 class="p-timeline__title">タイムライン</h2>
+                <p class="p-timeline__desc">作業時間は9時45分から16時10分です。その間には朝礼やラジオ体操、休憩なども含まれます。無理なく一日のリズムを整えながら、作業に取り組むことができます。</p>
+            </div>
+            <div class="p-timeline__schedule">
+                <dl class="p-timeline__list">
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">9:45</dt>
+                        <dd class="p-timeline__label">朝礼</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">9:45</dt>
+                        <dd class="p-timeline__label">ラジオ体操</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">9:50</dt>
+                        <dd class="p-timeline__label">作業開始</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">11:00</dt>
+                        <dd class="p-timeline__label">小体操</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">12:00</dt>
+                        <dd class="p-timeline__label">作業休憩</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">12:30</dt>
+                        <dd class="p-timeline__label">お昼休憩</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">13:30</dt>
+                        <dd class="p-timeline__label">午後の作業開始</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">14:30</dt>
+                        <dd class="p-timeline__label">小休憩</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">14:40</dt>
+                        <dd class="p-timeline__label">作業再開</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">16:00</dt>
+                        <dd class="p-timeline__label">作業終了</dd>
+                    </div>
+                    <div class="p-timeline__item">
+                        <dt class="p-timeline__time">16:10</dt>
+                        <dd class="p-timeline__label">終礼</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRAINING ========== -->
+    <section class="p-training">
+        <div class="p-training__inner">
+            <div class="p-training__text">
+                <h2 class="p-training__title">自宅トレーニングについて</h2>
+                <p class="p-training__desc">Plusらぼのトレーニングは、ご自宅のパソコンを使って参加することができます。外出が難しい方や、生活リズムを整えながら就業を始めたい方でも取り組みやすい環境を整えています。スタッフはチャットやオンライン面談で定期的にサポートし、困ったことはすぐに相談できる体制を整えています。</p>
+            </div>
+            <ul class="p-training__grid">
+                <li class="p-training__card p-training__card--green">
+                    <div class="p-training__photo">
+                        <img src="./assets/images/stuff-1.png" alt="スタッフ">
+                    </div>
+                    <p class="p-training__name">支援員</p>
+                </li>
+                <li class="p-training__card p-training__card--pink">
+                    <div class="p-training__photo">
+                        <img src="./assets/images/stuff-2.png" alt="スタッフ">
+                    </div>
+                    <p class="p-training__name">支援員</p>
+                </li>
+                <li class="p-training__card p-training__card--blue">
+                    <div class="p-training__photo">
+                        <img src="./assets/images/stuff-3.png" alt="スタッフ">
+                    </div>
+                    <p class="p-training__name">支援員</p>
+                </li>
+                <li class="p-training__card p-training__card--gray">
+                    <div class="p-training__photo">
+                        <img src="./assets/images/stuff-4.png" alt="スタッフ">
+                    </div>
+                    <p class="p-training__name">支援員</p>
+                </li>
+                <li class="p-training__card p-training__card--olive">
+                    <div class="p-training__photo">
+                        <img src="./assets/images/stuff-5.png" alt="スタッフ">
+                    </div>
+                    <p class="p-training__name">エンジニア</p>
+                </li>
+                <li class="p-training__card p-training__card--tan">
+                    <div class="p-training__photo">
+                        <img src="./assets/images/stuff-6.png" alt="スタッフ">
+                    </div>
+                    <p class="p-training__name">エンジニア</p>
+                </li>
+                <li class="p-training__card p-training__card--yellow">
+                    <div class="p-training__photo">
+                        <img src="./assets/images/stuff-7.png" alt="スタッフ">
+                    </div>
+                    <p class="p-training__name">デザイナー</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========== STATS ========== -->
+    <section class="p-stats">
+        <div class="p-stats__inner">
+            <h2 class="p-stats__title">数字で見るPlusらぼ</h2>
+            <p class="p-stats__desc">ご利用いただいている方の状況を数字でご紹介します。</p>
+            <ul class="p-stats__grid">
+                <li class="p-stats__card">
+                    <span class="p-stats__card-label">2025年度<br>就職者数</span>
+                    <span class="p-stats__card-value">5名</span>
+                </li>
+                <li class="p-stats__card">
+                    <span class="p-stats__card-label">通所者数</span>
+                    <span class="p-stats__card-value">5名</span>
+                </li>
+                <li class="p-stats__card">
+                    <span class="p-stats__card-label">リモート数</span>
+                    <span class="p-stats__card-value">15<small>名</small></span>
+                </li>
+                <li class="p-stats__card">
+                    <span class="p-stats__card-label">PC未経験者</span>
+                    <span class="p-stats__card-value">25%</span>
+                </li>
+                <li class="p-stats__card">
+                    <span class="p-stats__card-label">PC経験者</span>
+                    <span class="p-stats__card-value">75%</span>
+                </li>
+                <li class="p-stats__card">
+                    <span class="p-stats__card-label">平均勤続年数<br>（R8年4月時点）</span>
+                    <span class="p-stats__card-value">7ヶ月</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========== JOBS ========== -->
+    <section class="p-jobs">
+        <div class="p-jobs__inner">
+            <h2 class="p-jobs__title">就職先職業</h2>
+            <p class="p-jobs__desc">地元の中小企業からグローバル企業まで、幅広いフィールドでの就職実績があります。</p>
+            <ul class="p-jobs__list">
+                <li class="p-jobs__item">
+                    <span class="p-jobs__dot" aria-hidden="true"></span>
+                    総務・庶務アシスタント業務
+                </li>
+                <li class="p-jobs__item">
+                    <span class="p-jobs__dot" aria-hidden="true"></span>
+                    ITスペシャリスト（見習い）
+                </li>
+                <li class="p-jobs__item">
+                    <span class="p-jobs__dot" aria-hidden="true"></span>
+                    労務管理業務
+                </li>
+                <li class="p-jobs__item">
+                    <span class="p-jobs__dot" aria-hidden="true"></span>
+                    総務・人事業務
+                </li>
+                <li class="p-jobs__item">
+                    <span class="p-jobs__dot" aria-hidden="true"></span>
+                    一般事務、OA事務業務
+                </li>
+                <li class="p-jobs__item">
+                    <span class="p-jobs__dot" aria-hidden="true"></span>
+                    事務補助業務
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="p-faq">
+        <h2 class="p-faq__title">よくある質問</h2>
+
+        <div class="p-faq__list">
+            <!-- 1 -->
+            <details class="p-faq__item" open>
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">PCは貸してくれますか？また、貸してくれる場合の条件はありますか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                PCはお貸出しします。「私的な活動に使用しない」といった条件があります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 2 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">自分のPCを使って仕事してもいいですか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                合理的な理由がない限り、お貸出ししたPCを使用してください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 3 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">自宅にWi-Fiがない場合はどうすればいいですか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">ご自身で通信環境を整えて頂く必要があります。</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 4 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">どれくらいのパソコンのスキルが必要ですか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                文字が認識できれば、PCスキルは必要ありません。現在、利用中の方の5割はパソコンを触ったことがない人です。一つ一つ覚えていきましょう。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 5 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">自分のPCを使って仕事してもいいですか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                合理的な理由がない限り、お貸出ししたPCを使用してください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 6 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">トラブルシュートの方法は？事業所に行かなければいけないですか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                PCが起動できる場合は、Chatアプリ、ビデオ通話、遠隔操作アプリケーションでトラブルシュート。PCが起動できない場合はLineを使ってトラブルシュートします。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 7 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">朝礼や終礼はありますか？また、ある場合の方法はどうすればいいですか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                朝礼、終礼はあります。在宅訓練の方で希望があれば参加可能です。Google Meetsを利用して参加いただきます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 8 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">自宅訪問の時はどんな話をするんですか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                主に健康状態と仕事上のお困りごとについてお伺いします。そのほか、進路選択のお気持ちをお伺いすることがあります。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <!-- 9 -->
+            <details class="p-faq__item">
+                <summary class="p-faq__q">
+                    <span class="p-faq__q-text">就職を目指して求職活動をする時は、どのように行いますか？在宅就業以外の選択肢もありますか？</span>
+                    <span class="p-faq__icon"></span>
+                </summary>
+                <div class="p-faq__a-wrapper">
+                    <div class="p-faq__a-inner">
+                        <div class="p-faq__a">
+                            <p class="p-faq__a-text">
+                                求職活動支援の方法は企業見学、実習の調整と実施、公共職業安定所への同行、履歴書・職務経歴書の作成、情報提供書（プロフィール表）の作成と提出など、一般的な就労支援事業所のものと変わりません。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- ========== FLOW ========== -->
+    <section class="p-flow">
+        <div class="p-flow__inner">
+            <h2 class="p-flow__title">ご利用までの流れ</h2>
+            <ol class="p-flow__list">
+                <!-- STEP 1 -->
+                <li class="p-flow__step">
+                    <h3 class="p-flow__step-title">相談・お問い合わせ</h3>
+                    <div class="p-flow__step-icon">
+                        <img src="./assets/images/service-welfare-icon.svg" alt="">
+                    </div>
+                    <p class="p-flow__step-desc">
+                        お電話やメールフォームから、いつでもお気軽にご相談いただけます。「働きたいけれど不安がある」「自分に向いている仕事を知りたい」といった小さなお悩みでも構いません。
+                    </p>
+                </li>
+    
+                <!-- STEP 2 -->
+                <li class="p-flow__step">
+                    <h3 class="p-flow__step-title">体験利用  (PC対応あり)</h3>
+                    <div class="p-flow__step-icon">
+                        <img src="./assets/images/service-welfare-icon-2.svg" alt="">
+                    </div>
+                    <p class="p-flow__step-desc">
+                        1日〜数日間の体験利用を通して体験していただけます 。自身に合う環境かどうか、じっくり確かめていただけます。
+                    </p>
+                </li>
+    
+                <!-- STEP 3 -->
+                <li class="p-flow__step">
+                    <h3 class="p-flow__step-title">利用開始</h3>
+                    <div class="p-flow__step-icon">
+                        <img src="./assets/images/service-welfare-icon-3.svg" alt="">
+                    </div>
+                    <p class="p-flow__step-desc">
+                        体験を経て「ここで頑張りたい」と思われたら、いよいよスタートです 。目標に合わせた個別支援計画を作成し、あなたのあやりたい事をお手伝いします。
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="p-cta">
+        <div class="p-cta__inner">
+            <div class="p-cta__visual">
+                <img src="./assets/images/cta-illust.png" alt="">
+            </div>
+            <div class="p-cta__body">
+                <h2 class="p-cta__title">ちょっとしたことでも<br>ご相談ください</h2>
+                <p class="p-cta__text">気になることや、体験に関するご相談は常時受け付けておりますので、遠慮なくお問い合わせください。</p>
+                <a href="contact.html" class="c-btn c-btn--dark">
+                    話を聞いてみる
+                    <span class="c-btn__icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="l-footer">
+    <div class="l-footer__inner">
+        <div class="l-footer__top">
+            <a href="index.html" class="l-footer__logo l-footer__logo--pc" aria-label="Plusらぼ トップへ">
+                <img src="./assets/images/logo_01_white.png" alt="Plusらぼ" class="l-footer__logo-img">
+            </a>
+            <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+                <ul class="l-footer__nav-list">
+                    <li><a href="index.html"            class="l-footer__nav-link">トップ</a></li>
+                        <li><a href="https://www.wakatake.info/"                     class="l-footer__nav-link">法人サイト</a></li>
+                    <li><a href="about.html"            class="l-footer__nav-link">Plusらぼについて</a></li>
+                </ul>
+                <ul class="l-footer__nav-list">
+                    <li><a href="service-business.html" class="l-footer__nav-link">開発業務について</a></li>
+                    <li><a href="column/"               class="l-footer__nav-link">コラム</a></li>
+                    <li><a href="news/"                 class="l-footer__nav-link">お知らせ</a></li>
+                    <li><a href="contact.html"          class="l-footer__nav-link">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="l-footer__bottom">
+            <address class="l-footer__address">
+                〒525-0022<br>
+                滋賀県草津市川原町298-1 2F<br>
+                tel：<a href="tel:0775695697">077-569-5697</a><br>
+            </address>
+            <div class="l-footer__legal">
+                <a href="privacy.html" class="l-footer__privacy">プライバシーポリシー</a>
+                <small class="l-footer__copy">©2026　Plusらぼ</small>
+            </div>
+        </div>
+        <!-- SP専用ロゴ（最下部） -->
+        <a href="index.html" class="l-footer__logo l-footer__logo--sp" aria-hidden="true" tabindex="-1">
+            <img src="./assets/images/logo_01_white.png" alt="" class="l-footer__logo-img">
+        </a>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js?v=20260605"></script>
+    <script src="js/service-work.js?v=20260605b"></script>
+</body>
+</html>

@@ -1,0 +1,989 @@
+/* ============================================================
+   SERVICE-WORK.CSS — 就労支援サービス ページ専用スタイル
+   ============================================================ */
+
+body {
+  padding-top: var(--header-h);
+}
+
+/* ============================================================
+   FV
+   ============================================================ */
+.p-fv {
+    padding-top: clamp(48px, calc(72 / 1728 * 100vw), 72px);
+    overflow: hidden;
+}
+
+.p-fv__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    margin-bottom: clamp(116px, calc(382 / 1728 * 100vw), 382px);
+    padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, calc(48 / 1728 * 100vw), 48px);
+    min-height: clamp(336px, calc(538 / 1728 * 100vw), 538px);
+}
+
+.p-fv__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(10px, calc(14 / 1728 * 100vw), 14px);
+    padding-left: clamp(48px, calc(296 / 1728 * 100vw), 296px);
+}
+
+.c-label {
+    color: var(--color-accent-lime);
+}
+
+.p-fv__title {
+    color: var(--color-primary);
+    font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.p-fv__visual {
+    display: flex;
+}
+
+.p-fv__visual img {
+    width: clamp(360px, 51.0417vw, 882px);
+    height: auto;
+    display: block;
+    transform: translate(-14%, 20%);
+}
+
+
+@media (max-width: 768px) {
+    .c-label {
+        text-align: center;
+    }
+    .p-fv__inner {
+        margin-top: clamp(116px, calc(382 / 1728 * 100vw), 382px);
+    }
+
+    .p-fv__text {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .p-fv__visual img {
+        transform: translate(0, 0);
+    }
+}
+
+
+/* ============================================================
+   WORK（Plusらぼでの作業）
+   ============================================================ */
+.p-work {
+    padding-block: clamp(80px, calc(120 / 1728 * 100vw), 120px);
+    overflow-x: clip; /* タッチ検知を妨げないようhiddenからclipに変更 */
+}
+
+.p-work__inner {
+    margin-inline: auto;
+    padding-inline: clamp(4%, calc(296 / 1728 * 100vw), 296px) 0;
+}
+
+/* テキストエリアとスライダーエリアのレイアウト */
+.p-work__top-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.p-work__text {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.p-work__title {
+    font-size: clamp(16px, calc(36 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #004d40; /* 深いグリーン */
+    margin: 0;
+}
+
+.p-work__desc {
+    font-size: clamp(14px, calc(15 / 1728 * 100vw), 15px);
+    line-height: 1.9;
+    color: #444444;
+    margin: 0;
+}
+
+/* 詳しく見るボタン */
+.c-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+    width: fit-content;
+}
+
+.c-btn--dark {
+    color: #333333;
+}
+
+.c-btn:hover {
+    opacity: 0.7;
+}
+
+.c-btn__icon {
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #444444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.c-btn:hover .c-btn__icon {
+    transform: translateX(5px);
+}
+
+.c-btn__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* スライダー部分 */
+.p-work__slider-wrap {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.p-work__swiper {
+    overflow: visible !important; /* スライダーの外側を見せる */
+}
+
+.p-work__slide {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: auto;
+    width: clamp(216px, calc(560 / 1728 * 100%), 560px); /* PC時のカード幅 */
+}
+
+.p-work__sample-img {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.p-work__slide:hover .p-work__sample-img {
+    transform: translateY(-5px);
+}
+
+.p-work__sample-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.p-work__sample-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #004d40;
+    margin: 0;
+}
+
+/* ナビゲーションボタン */
+
+
+
+
+
+/* ============================================================
+   TIMELINE（タイムライン）
+   ============================================================ */
+.p-timeline {
+    padding-block: clamp(80px, calc(120 / 1728 * 100vw), 120px);
+}
+
+.p-timeline__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    gap: clamp(40px, calc(80 / 1728 * 100vw), 80px);
+}
+
+.p-timeline__text {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, calc(20 / 1728 * 100vw), 20px);
+    position: sticky;
+    top: calc(var(--header-h) + 40px);
+    padding-left: clamp(48px, calc(296 / 1728 * 100vw), 296px);
+}
+
+.p-timeline__title {
+    color: var(--color-primary);
+    font-size: clamp(16px, calc(36 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.p-timeline__desc {
+    font-size: clamp(14px, calc(15 / 1728 * 100vw), 15px);
+    line-height: 1.9;
+}
+
+.p-timeline__schedule {
+    flex: 1;
+}
+
+.p-timeline__list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, calc(32 / 1728 * 100vw), 32px);
+}
+
+.p-timeline__item {
+    display: grid;
+    grid-template-columns: clamp(60px, calc(80 / 1728 * 100vw), 80px) 1fr;
+    align-items: center;
+    gap: clamp(12px, calc(20 / 1728 * 100vw), 20px);
+}
+
+.p-timeline__time {
+    font-size: clamp(13px, calc(24 / 1728 * 100vw), 24px);
+    font-weight: 700;
+    color: var(--color-accent-lime);
+    text-align: right;
+    flex-shrink: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.p-timeline__label {
+    width: clamp(160px, calc(420 / 1728 * 100vw), 420px);
+    border: 2px solid var(--color-text);
+    padding:
+        clamp(8px, calc(11 / 1728 * 100vw), 11px)
+        clamp(16px, calc(24 / 1728 * 100vw), 24px);
+    font-size: clamp(14px, calc(24 / 1728 * 100vw), 24px);
+    font-weight: 700;
+    text-align: center;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .p-timeline__text {
+        padding-left: 0;
+    }
+}
+
+/* ============================================================
+   TRAINING（自宅トレーニング）
+   ============================================================ */
+.p-training {
+  padding-block: clamp(80px, calc(120 / 1728 * 100vw), 120px);
+}
+
+.p-training__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: clamp(4%, calc(189 / 1728 * 100vw), 189px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, calc(40 / 1728 * 100vw), 40px);
+}
+
+.p-training__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(14px, calc(20 / 1728 * 100vw), 20px);
+}
+
+.p-training__title {
+    color: var(--color-primary);
+    font-size: clamp(16px, calc(36 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.p-training__desc {
+    max-width: 52em;
+    font-size: clamp(14px, calc(15 / 1728 * 100vw), 15px);
+    line-height: 1.9;
+}
+
+.p-training__grid {
+    display: flex;
+    gap: clamp(20px, calc(82 / 1728 * 100vw), 82px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.p-training__card {
+    width: clamp(170px, calc(276 / 1728 * 100%), 276px); 
+    display: flex;
+    flex-direction: column;
+}
+
+.p-training__photo {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.p-training__photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.p-training__name {
+    font-size: clamp(12px, calc(13 / 1728 * 100vw), 13px);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .p-training__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(max(150px, (100% - 32px) / 3), 1fr));
+        gap: 22px 16px;
+    }
+
+    .p-training__card {
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .p-training__text {
+        align-items: flex-start;
+    }
+}
+
+
+/* ============================================================
+   STATS（数字で見るPlusらぼ）
+   ============================================================ */
+.p-stats {
+    padding-block: clamp(80px, calc(120 / 1728 * 100vw), 120px);
+}
+
+.p-stats__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: clamp(4%, calc(296 / 1728 * 100vw), 296px);
+}
+
+.p-stats__title {
+    font-size: clamp(16px, calc(36 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    margin-bottom: clamp(8px, calc(12 / 1728 * 100vw), 12px);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.p-stats__desc {
+    font-size: clamp(14px, calc(15 / 1728 * 100vw), 15px);
+    line-height: 1.85;
+    margin-bottom: clamp(32px, calc(56 / 1728 * 100vw), 56px);
+    text-align: center;
+}
+
+.p-stats__grid {
+    display: grid; /* FlexからGridに変更 */
+    /* 隙間の設定 */
+    gap: clamp(12px, calc(16 / 1728 * 100vw), 16px);
+    
+    /* 【PC：3列表示】
+       等幅の列を3つ作成
+    */
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.p-stats__card {
+    border-radius: clamp(6px, calc(8 / 1728 * 100vw), 8px);
+    padding-block: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #F2ECDA;
+}
+
+.p-stats__card-label {
+    font-size: clamp(12px, calc(13 / 1728 * 100vw), 13px);
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.p-stats__card-value {
+    font-size: clamp(36px, calc(56 / 1728 * 100vw), 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-accent-lime);
+}
+
+.p-stats__card-value small {
+    font-size: 0.5em;
+    font-weight: 700;
+}
+
+.p-stats__card-note {
+    font-size: clamp(11px, calc(12 / 1728 * 100vw), 12px);
+    color: rgba(0, 0, 0, 0.55);
+}
+
+
+@media screen and (max-width: 768px) {
+    .p-stats__grid {
+        /* 等幅の列を2つに変更 */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+/* ============================================================
+   JOBS（対応職種）
+   ============================================================ */
+.p-jobs {
+    padding-block: clamp(80px, calc(120 / 1728 * 100vw), 120px);
+}
+
+.p-jobs__inner {
+    margin-inline: auto;
+    padding-inline: clamp(4%, calc(440 / 1728 * 100vw), 440px);
+}
+
+.p-jobs__title {
+    font-size: clamp(16px, calc(36 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    margin-bottom: clamp(8px, calc(12 / 1728 * 100vw), 12px);
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.p-jobs__desc {
+    width: clamp(360px, calc(562 / 1728 * 100vw), 562px);
+    font-size: clamp(14px, calc(15 / 1728 * 100vw), 15px);
+    line-height: 1.9;
+    margin-inline: auto;
+    margin-bottom: clamp(32px, calc(48 / 1728 * 100vw), 48px);
+}
+
+.p-jobs__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(12px, calc(16 / 1728 * 100vw), 16px) clamp(32px, calc(64 / 1728 * 100vw), 64px);
+    border-top: 1px solid var(--color-border);
+}
+
+.p-jobs__item {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, calc(14 / 1728 * 100vw), 14px);
+    padding-block: clamp(14px, calc(18 / 1728 * 100vw), 18px);
+    padding-inline: 25px;
+    border: 1px solid var(--color-accent-lime);
+    border-radius: 8px;
+    font-size: clamp(13px, calc(15 / 1728 * 100vw), 15px);
+    font-weight: 700;
+}
+
+.p-jobs__dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--color-accent-lime);
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   FAQ（よくある質問）
+   ============================================================ */
+   .p-faq {
+    max-width: 848px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    color: #ffffff;
+}
+
+.p-faq__title {
+    color: var(--color-primary);
+    font-size: clamp(16px, calc(32 / 1728 * 100vw), 32px);
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+}
+
+.p-faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.p-faq__item {
+    border: 2px solid var(--color-text);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-faq__item:hover {
+    border-color: #555555;
+}
+
+.p-faq__q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    position: relative;
+    z-index: 2;
+}
+
+.p-faq__q::-webkit-details-marker { 
+    display: none; 
+}
+
+.p-faq__q-text {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-accent-lime);
+    padding-right: 20px;
+}
+
+/* アイコン（＋） */
+.p-faq__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--color-accent-lime);
+}
+
+.p-faq__icon::before,
+.p-faq__icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-faq__icon::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* 開いている時のアイコン変化 */
+.p-faq__item[open] .p-faq__icon::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 0;
+}
+
+/* アニメーション用ラッパー */
+.p-faq__a-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p-faq__item[open] .p-faq__a-wrapper {
+    grid-template-rows: 1fr;
+}
+
+.p-faq__a-inner {
+    overflow: hidden;
+}
+
+.p-faq__a {
+    padding: 0 24px 24px;
+}
+
+.p-faq__a-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* ============================================================
+   FLOW（ご利用までの流れ）
+   ============================================================ */
+.p-flow {
+    padding-block: clamp(160px, calc(200 / 1728 * 100%), 200px);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.p-flow__inner {
+    max-width: 848px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+}
+
+.p-flow__title {
+    color: var(--color-primary);
+    font-size: clamp(16px, calc(32 / 1728 * 100vw), 32px);
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.p-flow__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-flow__step {
+    position: relative;
+    padding: 
+        /* top */
+        clamp(36px, calc(100 / 1728 * 100%), 100px) 
+        /* side */
+        clamp(20px, calc(30 / 1728 * 100%), 30px) 
+        /* bottom */
+        clamp(54px, calc(72 / 1728 * 100%), 72px);
+    text-align: center;
+    flex: 1;
+}
+
+/* 背景色・角丸の設定 */
+.p-flow__step:nth-of-type(1) { background-color: #c5e07e; border-radius: 8px 0 0 8px; }
+.p-flow__step:nth-of-type(2) { background-color: #d1e88c; }
+.p-flow__step:nth-of-type(3) { background-color: #e0f0a1; border-radius: 0 8px 8px 0; }
+
+.p-flow__step-title {
+    font-weight: bold;
+    color: var(--color-text);
+    font-size: 18px;
+    margin: 0 0 clamp(20px, calc(64 / 1728 * 100%), 64px) 0;
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+}
+
+.p-flow__step-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-flow__step-icon svg {
+    width: 100%;
+    height: auto;
+    fill: #ffffff;
+}
+
+.p-flow__step-desc {
+    font-size: clamp(14px, calc(15 / 1728 * 100vw), 15px);
+    text-align: left;
+    margin: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* モバイル用の矢印演出（背景色の三角形） */
+.p-flow__step:not(:last-of-type)::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    z-index: 10;
+}
+
+.p-flow__step:nth-of-type(1)::after { border-top: 20px solid #c5e07e; }
+.p-flow__step:nth-of-type(2)::after { border-top: 20px solid #d1e88c; }
+
+@media (min-width: 768px) {
+    .p-flow__list {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    /* デスクトップ用の矢印演出（背景色の三角形） */
+    .p-flow__step:not(:last-of-type)::after {
+        bottom: auto;
+        top: 50%;
+        right: -30px;
+        left: auto;
+        transform: translateY(-50%);
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+        border-left: 30px solid transparent;
+        border-right: none;
+    }
+
+    .p-flow__step:nth-of-type(1)::after { border-left: 30px solid #c5e07e; }
+    .p-flow__step:nth-of-type(2)::after { border-left: 30px solid #d1e88c; }
+}
+
+
+
+/* ============================================================
+   SP（768px以下）
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* FV */
+    .p-fv {
+        padding-top: calc(32 / 390 * 100vw);
+    }
+
+    .p-fv__inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 0;
+        padding-inline: 20px;
+    }
+
+    .p-fv__text {
+        padding-bottom: calc(24 / 390 * 100vw);
+        gap: calc(8 / 390 * 100vw);
+    }
+    
+
+    .p-fv__visual {
+        justify-content: center;
+
+        & img {
+        max-width: calc(280 / 390 * 100vw);
+        }
+    }
+
+    /* Work */
+    .p-work {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-work__inner {
+        grid-template-columns: 1fr;
+        padding-inline: 20px;
+        gap: calc(32 / 390 * 100vw);
+    }
+
+
+
+  /* Timeline */
+    .p-timeline {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-timeline__inner {
+        grid-template-columns: 1fr;
+        padding-inline: 20px;
+        gap: calc(32 / 390 * 100vw);
+    }
+
+    .p-timeline__list {
+        position: static;
+        align-items: center;
+    }
+
+    .p-timeline__text {
+        position: static;
+    }
+
+
+    .p-timeline__time {
+        font-size: calc(13 / 390 * 100vw);
+        transform: translateX(-50%);
+    }
+
+    .p-timeline__label {
+        font-size: calc(13 / 390 * 100vw);
+        padding: calc(8 / 390 * 100vw) calc(16 / 390 * 100vw);
+        transform: translateX(-20%);
+    }
+
+  /* Training */
+    .p-training {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-training__inner {
+        padding-inline: 20px;
+        gap: calc(24 / 390 * 100vw);
+    }
+
+    .p-training__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: calc(12 / 390 * 100vw);
+    }
+
+
+    /* Stats */
+    .p-stats {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-stats__inner {
+        padding-inline: 20px;
+    }
+
+    .p-stats__card {
+        flex-direction: column;
+        padding-block: 20px;
+        gap: 6px;
+    }
+
+    .p-stats__card-value {
+        font-size: clamp(28px, calc(32 / 390 * 100vw), 32px);
+        white-space: nowrap;
+    }
+
+    /* Jobs */
+    .p-jobs {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-jobs__inner {
+        padding-inline: 20px;
+    }
+
+    .p-jobs__list {
+        grid-template-columns: 1fr;
+    }
+
+    /* FAQ */
+    .p-faq {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-faq__inner {
+        padding-inline: 20px;
+    }
+
+    /* Flow */
+    .p-flow {
+        padding-block: calc(56 / 390 * 100vw);
+    }
+
+    .p-flow__inner {
+        padding-inline: 20px;
+    }
+
+    .p-flow__step:nth-of-type(1) { border-radius: 8px 8px 0 0; }
+    .p-flow__step:nth-of-type(3) { border-radius: 0 0 8px 8px; }
+
+    .p-flow__step {
+        width: 100%;
+    }
+
+    .p-flow__arrow {
+        transform: rotate(90deg);
+        width: calc(20 / 390 * 100vw);
+    }
+}
+
+
+/* ============================================================
+   1729px以上 — 固定サイズ
+   ============================================================ */
+@media (min-width: 1729px) {
+
+  /* FV */
+  .p-fv { padding-top: 72px; }
+  .p-fv__inner { padding-inline: 48px; gap: 48px; min-height: 440px; }
+  .p-fv__text { padding-bottom: 80px; gap: 14px; }
+  .p-fv__title { font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+        text-align: center; }
+  .p-fv__visual img { max-width: 540px; }
+
+  /* Work */
+  .p-work { padding-block: 120px; }
+  .p-work__inner { padding-inline: 48px; gap: 80px; }
+  .p-work__title { font-size: 36px; }
+  .p-work__desc { font-size: 15px; }
+  .p-work__sample-label { font-size: 14px; }
+
+  /* Timeline */
+  .p-timeline { padding-block: 120px; }
+  .p-timeline__inner { padding-inline: 48px; gap: 80px; }
+  .p-timeline__title { font-size: 36px; }
+  .p-timeline__time { font-size: 15px; }
+  .p-timeline__label { font-size: 15px; padding: 11px 24px; }
+
+  /* Training */
+  .p-training { padding-block: 120px; }
+  .p-training__inner { padding-inline: 48px; gap: 40px; }
+  .p-training__title { font-size: 36px; }
+
+  /* Stats */
+  .p-stats { padding-block: 120px; }
+  .p-stats__inner { padding-inline: 48px; }
+  .p-stats__title { font-size: 36px; }
+  .p-stats__card-value { font-size: 56px; }
+
+  /* Jobs */
+  .p-jobs { padding-block: 120px; }
+  .p-jobs__inner { padding-inline: 48px; }
+  .p-jobs__title { font-size: 36px; }
+  .p-jobs__item { font-size: 15px; }
+
+  /* FAQ */
+  .p-faq { padding-block: 120px; }
+  .p-faq__inner { padding-inline: 48px; }
+  .p-faq__title { font-size: 36px; margin-bottom: 56px; }
+  .p-faq__q-text { font-size: 15px; }
+  .p-faq__a p { font-size: 15px; }
+
+  /* Flow */
+  .p-flow { padding-block: 120px; }
+  .p-flow__inner { padding-inline: 48px; }
+  .p-flow__title { font-size: 36px; }
+  .p-flow__step-title { font-size: 18px; }
+  .p-flow__step-icon { width: 64px; height: 64px; }
+
+  /* CTA */
+  .p-cta { padding-block: 100px; }
+  .p-cta__inner { padding-inline: 48px; gap: 72px; }
+  .p-cta__title { font-size: 36px; }
+  .p-cta__visual { width: 200px; }
+}
