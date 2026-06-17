@@ -139,3 +139,30 @@ function save_custom_project_meta_box($post_id) {
     }
 }
 add_action('save_post', 'save_custom_project_meta_box');
+
+function insert_google_ads_tags() {
+    ?>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17541451522"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // 💡全ページでGoogle広告（AW-）のベースコードを動かす（リマーケティング用）
+      gtag('config', 'AW-17541451522');
+    </script>
+    <?php
+
+    // 💡お問い合わせ完了ページ（スラッグが 'thanks' の場合）のみ、コンバージョンイベントを実行
+    if ( is_page('thanks') ) { 
+        ?>
+        <script>
+          gtag('event', 'generate_lead', {
+              'event_category': 'contact',
+              'event_label': 'form_submit'
+          });
+        </script>
+        <?php
+    }
+}
+add_action('wp_head', 'insert_google_ads_tags');
