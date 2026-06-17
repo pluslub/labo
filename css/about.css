@@ -424,16 +424,15 @@ body {
     }
 
     .p-access__deco {
-        width: calc(210 / 390 * 100vw);
+        width: 200%;
         height: auto;
         overflow: visible;
-        top: -20%;
-        left: 0;
+        top: -70%;
+        left: -20%;
     }
 
     .p-access__info-dd {
         text-decoration: none;
-        white-space: nowrap;
     }
 
     .p-access__info-row {

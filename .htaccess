@@ -14,4 +14,4 @@ RewriteRule . /index.php [L]
 
 # END WordPress
 
-AddHandler x-httpd-php82 .html
+AddType application/x-httpd-php .html

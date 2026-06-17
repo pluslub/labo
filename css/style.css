@@ -510,7 +510,7 @@ body {
     /* ---------- インナーレイアウト ---------- */
     .p-about__inner {
         flex-direction: column;
-        padding-inline: 20px;
+        padding-inline: 48px;
         gap: 32px;
     }
 
@@ -782,7 +782,6 @@ body {
     left: 0;
     width: 100%;
     height: calc(100% + clamp(30px, calc(42 / 1728 * 100vw), 54px));
-    object-fit: cover;
     object-position: left center;
     z-index: 0;
 }
@@ -793,7 +792,6 @@ body {
     right: 0;
     width: 100%;
     height: calc(100% + clamp(30px, calc(42 / 1728 * 100vw), 54px));
-    object-fit: cover;
     object-position: right center;
     z-index: 0;
 }

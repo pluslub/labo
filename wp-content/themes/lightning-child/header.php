@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-     <link rel="stylesheet" href="<?php echo home_url( '/css/common.css?v=20260606' ); ?>">
-     <link rel="stylesheet" href="<?php echo home_url( '/css/about.css?v=20260605' ); ?>">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+     <link rel="stylesheet" href="<?php echo home_url( '/css/style.css?v=20260607d' ); ?>">
+     <link rel="stylesheet" href="<?php echo home_url( '/css/common.css?v=20260606' ); ?>">
     
     <?php wp_head(); ?>
 </head>
@@ -26,19 +26,15 @@
             <div class="menu-left">
                 <h2 class="menu-title">常時<br>見学・体験<br>受付中</h2>
                 <p class="menu-desc">わからないことや、ご相談でも大丈夫です。<br>お気軽にお問い合わせください。</p>
-                <a href="#" class="menu-contact-btn">お問い合わせ</a>
+                <a href="https://pluslab.wakatake.info/contact.html" class="menu-contact-btn">お問い合わせ</a>
             </div>
             <div class="menu-links">
-                <div>
-                    <a href="#" class="menu-link-item">Plusらぼについて</a>
-                    <a href="#" class="menu-link-item">就労支援サービス</a>
-                    <a href="#" class="menu-link-item">コラム</a>
-                </div>
-                <div>
-                    <a href="#" class="menu-link-item">事業者向けサービス</a>
-                    <a href="#" class="menu-link-item">障害福祉サービスについて</a>
-                    <a href="#" class="menu-link-item">お知らせ</a>
-                </div>
+                <a href="https://pluslab.wakatake.info/index.html" class="menu-link-item">トップ</a>
+                <a href="https://pluslab.wakatake.info/about.html" class="menu-link-item">Plusらぼについて</a>
+                <a href="https://pluslab.wakatake.info/service-business.html" class="menu-link-item">事業者向けサービス</a>
+                <a href="https://pluslab.wakatake.info/service-work.html" class="menu-link-item">就労支援サービス</a>
+                <a href="https://pluslab.wakatake.info/lab-column/" class="menu-link-item">コラム</a>
+                <a href="https://pluslab.wakatake.info/archives/category/news" class="menu-link-item">お知らせ</a>
             </div>
         </div>
         <div class="menu-footer-logo">
@@ -55,7 +51,7 @@
         </div>
 
         <div class="header__right">
-            <a href="#" class="header__contact">
+            <a href="https://pluslab.wakatake.info/contact.html" class="header__contact">
                 お問い合わせ
                 <span class="header__contact-btn"></span>
             </a>

@@ -6,22 +6,22 @@
 <footer class="l-footer">
     <div class="l-footer__inner">
         <div class="l-footer__top">
-            <a href="index.html" class="l-footer__logo l-footer__logo--pc" aria-label="Plusらぼ トップへ">
+            <a href="https://pluslab.wakatake.info/index.html" class="l-footer__logo l-footer__logo--pc" aria-label="Plusらぼ トップへ">
                 <img src="<?php echo esc_url( home_url( '/assets/images/logo_01_white.png' ) ); ?>" alt="" class="l-footer__logo-img">
             </a>
-            <nav class="l-footer__nav" aria-label="フッターナビゲーション">
-                <ul class="l-footer__nav-list">
-                    <li><a href="index.html"            class="l-footer__nav-link">トップ</a></li>
-                        <li><a href="https://www.wakatake.info/"                     class="l-footer__nav-link">法人サイト</a></li>
-                    <li><a href="about.html"            class="l-footer__nav-link">Plusらぼについて</a></li>
-                </ul>
-                <ul class="l-footer__nav-list">
-                    <li><a href="service-business.html" class="l-footer__nav-link">開発業務について</a></li>
-                    <li><a href="column/"               class="l-footer__nav-link">コラム</a></li>
-                    <li><a href="news/"                 class="l-footer__nav-link">お知らせ</a></li>
-                    <li><a href="contact.html"          class="l-footer__nav-link">お問い合わせ</a></li>
-                </ul>
-            </nav>
+                <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+                    <ul class="l-footer__nav-list">
+                        <li><a href="https://pluslab.wakatake.info/index.html" class="l-footer__nav-link">トップ</a></li>
+                        <li><a href="https://www.wakatake.info/" class="l-footer__nav-link">法人サイト</a></li>
+                        <li><a href="https://pluslab.wakatake.info/about.html" class="l-footer__nav-link">Plusらぼについて</a></li>
+                    </ul>
+                    <ul class="l-footer__nav-list">
+                        <li><a href="https://pluslab.wakatake.info/service-business.html" class="l-footer__nav-link">開発業務について</a></li>
+                        <li><a href="https://pluslab.wakatake.info/lab-column" class="l-footer__nav-link">コラム</a></li>
+                        <li><a href="https://pluslab.wakatake.info/archives/category/news" class="l-footer__nav-link">お知らせ</a></li>
+                        <li><a href="https://pluslab.wakatake.info/contact.html" class="l-footer__nav-link">お問い合わせ</a></li>
+                    </ul>
+                </nav>
         </div>
         <div class="l-footer__bottom">
             <address class="l-footer__address">
@@ -30,12 +30,12 @@
                 tel：<a href="tel:0775695697">077-569-5697</a><br>
             </address>
             <div class="l-footer__legal">
-                <a href="privacy.html" class="l-footer__privacy">プライバシーポリシー</a>
+                <a href="https://pluslab.wakatake.info/privacy.html" class="l-footer__privacy">プライバシーポリシー</a>
                 <small class="l-footer__copy">©2026　Plusらぼ</small>
             </div>
         </div>
         <!-- SP専用ロゴ（最下部） -->
-        <a href="index.html" class="l-footer__logo l-footer__logo--sp" aria-hidden="true" tabindex="-1">
+        <a href="https://pluslab.wakatake.info/index.html" class="l-footer__logo l-footer__logo--sp" aria-hidden="true" tabindex="-1">
             <img src="<?php echo esc_url( home_url( '/assets/images/logo_01_white.png' ) ); ?>" alt="" class="l-footer__logo-img">
         </a>
     </div>
