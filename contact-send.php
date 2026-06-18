@@ -5,6 +5,20 @@
  */
 require_once __DIR__ . '/wp-load.php';
 
+// ★ 送信先・サイト情報の設定
+$admin_email = 'pluslab.wakatake@gmail.com';
+$mail_from   = 'no-reply@pluslab.wakatake.info'; // 送信元として使うアドレス（サイト自身のドメイン）
+$site_name   = 'Plusらぼ';
+$site_url    = 'https://pluslab.wakatake.info/';
+
+// ★【重要】WordPressデフォルトの「From」を強制的に書き換える設定
+add_filter('wp_mail_from_name', function() use ($site_name) {
+    return $site_name; // 送信元名を「Plusらぼ」にする
+});
+add_filter('wp_mail_from', function() use ($mail_from) {
+    return $mail_from; // 送信元メールアドレスはサイト自身のドメインを使う（他ドメインへのなりすまし送信を避ける）
+});
+
 // GET・直接アクセスはフォームへ戻す
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     wp_redirect(home_url('/contact.html'));
@@ -12,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 入力値取得・サニタイズ
-$name     = sanitize_text_field($_POST['name']    ?? '');
-$tel      = sanitize_text_field($_POST['tel']     ?? '');
+$name     = sanitize_text_field($_POST['name']     ?? '');
+$tel      = sanitize_text_field($_POST['tel']      ?? '');
 $email    = sanitize_email($_POST['email']        ?? '');
 $message  = sanitize_textarea_field($_POST['message'] ?? '');
 $honeypot = $_POST['website'] ?? '';
@@ -29,11 +43,6 @@ if (empty($name) || empty($email) || !is_email($email) || empty($message)) {
     wp_redirect(home_url('/contact.html?error=1'));
     exit;
 }
-
-// ★ 送信先アドレスをここに設定してください
-$admin_email = 'pluslab.wakatake@gmail.com';
-$site_name   = 'Plusらぼ';
-$site_url    = 'https://pluslab.wakatake.info/';
 
 // 管理者宛メール本文
 $tel_text      = !empty($tel) ? $tel : '（未入力）';
@@ -53,7 +62,7 @@ $admin_body    = <<<EOT
 EOT;
 $admin_headers = [
     'Content-Type: text/plain; charset=UTF-8',
-    "Reply-To: {$email}",
+    "Reply-To: {$email}", // 返信先をユーザーのアドレスに
 ];
 
 // 送信者への自動返信メール本文
@@ -78,7 +87,6 @@ URL：{$site_url}
 EOT;
 $auto_headers = [
     'Content-Type: text/plain; charset=UTF-8',
-    "From: {$site_name} <{$admin_email}>",
 ];
 
 // 管理者へのメール送信（失敗したらエラーページへ）
