@@ -1,0 +1,641 @@
+/* ============================================================
+   RESERVE.CSS — 見学予約 ページ専用スタイル
+   ============================================================ */
+
+body {
+  padding-top: var(--header-h);
+}
+
+/* ============================================================
+   FV
+   ============================================================ */
+.p-fv--reserve {
+  background-color: var(--color-bg);
+  padding-block: clamp(48px, calc(72 / 1728 * 100vw), 72px) clamp(24px, calc(40 / 1728 * 100vw), 40px);
+  overflow: hidden;
+}
+
+.p-fv--reserve .p-fv__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+}
+
+.p-fv--reserve .p-fv__text {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, calc(14 / 1728 * 100vw), 14px);
+  /* 下の「見学予約」お知らせボックス（760px中央寄せ）と見出しの左端を揃える */
+  max-width: 760px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.p-fv--reserve .p-fv__title {
+  color: var(--color-primary);
+  font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* ============================================================
+   見学方法のご案内（オンライン／現地）
+   ============================================================ */
+.p-reserve-notice {
+  background-color: var(--color-bg);
+  padding-top: clamp(8px, calc(16 / 1728 * 100vw), 16px);
+  padding-bottom: clamp(32px, calc(56 / 1728 * 100vw), 56px);
+}
+
+.p-reserve-notice__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+}
+
+.p-reserve-notice--embed {
+  padding-top: clamp(48px, calc(80 / 1728 * 100vw), 80px);
+}
+
+.p-reserve-embed__title {
+  color: var(--color-primary);
+  font-size: clamp(20px, calc(32 / 1728 * 100vw), 32px);
+  font-weight: 700;
+  line-height: 1.4;
+  max-width: 760px;
+  margin-inline: auto;
+  margin-bottom: clamp(16px, calc(20 / 1728 * 100vw), 20px);
+}
+
+.p-reserve-notice__box {
+  max-width: 760px;
+  margin-inline: auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-bg-sub, #EDEBE5);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 4px;
+  padding: clamp(18px, calc(24 / 1728 * 100vw), 24px) clamp(20px, calc(28 / 1728 * 100vw), 28px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, calc(12 / 1728 * 100vw), 12px);
+}
+
+.p-reserve-notice__title {
+  font-size: clamp(14px, calc(16 / 1728 * 100vw), 16px);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.p-reserve-notice__text {
+  font-size: clamp(13px, calc(14 / 1728 * 100vw), 14px);
+  line-height: 1.9;
+  color: var(--color-text);
+}
+
+.p-reserve-notice__text strong {
+  color: var(--color-accent-orange);
+}
+
+/* ============================================================
+   カレンダー／フォーム セクションの余白
+   ============================================================ */
+.p-reserve {
+  background-color: var(--color-bg);
+  padding-bottom: clamp(64px, calc(100 / 1728 * 100vw), 100px);
+}
+
+.p-reserve__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+}
+
+/* ============================================================
+   SP (768px以下)
+   ============================================================ */
+@media (max-width: 768px) {
+  .p-fv--reserve .c-label {
+    text-align: center;
+  }
+
+  .p-fv--reserve {
+    padding-block: calc(56 / 390 * 100vw) calc(24 / 390 * 100vw);
+  }
+
+  .p-fv--reserve .p-fv__inner {
+    padding-inline: 20px;
+  }
+
+  .p-fv--reserve .p-fv__text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .p-reserve-notice__inner,
+  .p-reserve__inner {
+    padding-inline: 20px;
+  }
+
+  .p-fv--reserve .p-fv__title {
+    font-size: clamp(16px, calc(71 / 1728 * 100vw), 32px);
+    text-align: center;
+  }
+
+  .p-reserve-notice__box {
+    padding: 18px;
+  }
+}
+
+
+/* ============================================================
+   予約カレンダー専用（reserve_form より移設）
+   ============================================================ */
+
+#reservation-calendar {
+  max-width: 800px;
+  margin-inline: auto;
+  padding: 20px;
+  color: var(--color-text);
+}
+
+#reservation-calendar .calendar-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+#reservation-calendar .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#reservation-calendar .calendar-header h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+#reservation-calendar .nav-btn {
+  background: var(--color-text);
+  border: 1px solid var(--color-text);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#reservation-calendar .nav-btn:hover {
+  background: var(--color-accent-orange);
+  border: 1px solid var(--color-accent-orange);
+}
+
+/* カレンダーグリッド */
+#reservation-calendar .month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-bg);
+}
+
+/* 曜日ヘッダー */
+#reservation-calendar .day-name {
+  font-weight: bold;
+  background: var(--color-primary);
+  padding: 10px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* 日付セル */
+#reservation-calendar .day-cell {
+  background: #ffffff;
+  min-height: 90px;
+  padding: 8px;
+  position: relative;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+#reservation-calendar .day-cell.disabled { background: var(--color-bg-sub); }
+
+#reservation-calendar .date-num {
+  font-size: 14px;
+  color: #555555;
+}
+
+/* ステータス表示 */
+#reservation-calendar .status-area {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+}
+#reservation-calendar .status-area.ok {
+  color: var(--color-primary);
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  font-weight: 900;
+}
+#reservation-calendar .status-area.ng {
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: normal;
+}
+
+/* ------------------------------------------------------------
+   吹き出し（時間枠ポップアップ）
+   ------------------------------------------------------------ */
+
+/* 1. 基本配置（非表示・マスの右横に配置） */
+#reservation-calendar .tooltip {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  text-align: left;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+/* 2. 吹き出しの左向き矢印 */
+#reservation-calendar .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* 吹き出しの左側に配置 */
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent var(--color-primary) transparent transparent; /* 左向き三角形 */
+}
+
+/* 3. 表示条件（PCホバー ＆ スマホタップ） */
+#reservation-calendar .day-cell:hover .tooltip,
+#reservation-calendar .day-cell.active-cell .tooltip {
+  display: block;
+}
+
+/* 4. 時間選択ボタン項目 */
+#reservation-calendar .time-slot-item {
+  padding: 6px 0;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  transition: opacity 0.2s;
+}
+#reservation-calendar .time-slot-item:last-child {
+  border-bottom: none;
+}
+#reservation-calendar .time-slot-item:hover {
+  opacity: 0.8;
+  color: var(--color-accent-lime);
+}
+
+/* 5. 画面右側（金曜・土曜・日曜）ははみ出し防止で左側に表示 */
+#reservation-calendar .day-cell:nth-child(7n-2) .tooltip,
+#reservation-calendar .day-cell:nth-child(7n-1) .tooltip,
+#reservation-calendar .day-cell:nth-child(7n) .tooltip {
+  left: auto;
+  right: calc(100% + 10px);
+}
+
+#reservation-calendar .day-cell:nth-child(7n-2) .tooltip::after,
+#reservation-calendar .day-cell:nth-child(7n-1) .tooltip::after,
+#reservation-calendar .day-cell:nth-child(7n) .tooltip::after {
+  right: auto;
+  left: 100%;
+  border-color: transparent transparent transparent var(--color-primary);
+}
+
+#reservation-calendar .calendar-loading {
+  text-align: center;
+  padding: 30px;
+  color: var(--color-primary);
+}
+
+/* ============================================================
+   予約フォーム専用スタイル（reserve_form より移設）
+   ============================================================ */
+
+#reservation-form-container {
+  max-width: 650px;
+  margin-inline: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: var(--font-base);
+}
+
+/* ステップナビゲーション */
+#reservation-form-container .step-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 8px;
+}
+#reservation-form-container .step-item {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  background: var(--color-bg-sub);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+#reservation-form-container .step-item.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+#reservation-form-container .step-arrow {
+  color: var(--color-primary);
+  font-size: 12px;
+}
+
+/* 確認画面の上部注意書きメッセージ */
+#reservation-form-container .confirm-alert-box {
+  border: 1px solid var(--color-accent-orange);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* カードコンテナ */
+#reservation-form-container .form-card {
+  background: var(--color-white);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#reservation-form-container h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: var(--color-primary);
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 10px;
+}
+
+/* 予約日時表示エリア */
+#reservation-form-container .reserved-info {
+  background: var(--color-bg-sub);
+  border: 1px solid var(--color-bg);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/* フォーム入力エリア */
+#reservation-form-container .form-group {
+  margin-bottom: 20px;
+}
+#reservation-form-container .label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+#reservation-form-container label {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--color-text);
+}
+#reservation-form-container .badge-required {
+  background: var(--color-accent-orange);
+  color: var(--color-white);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+#reservation-form-container input[type="text"],
+#reservation-form-container input[type="email"],
+#reservation-form-container input[type="tel"],
+#reservation-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+#reservation-form-container input.input-error,
+#reservation-form-container textarea.input-error {
+  border-color: #d32f2f;
+  background-color: #fff9f9;
+}
+
+#reservation-form-container .error-box {
+  display: none;
+  background: #fcebeb;
+  color: #d32f2f;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-top: 6px;
+  align-items: center;
+  gap: 6px;
+}
+#reservation-form-container .error-box.show {
+  display: flex;
+}
+
+/* 確認画面のテーブル表示 */
+#reservation-form-container .confirm-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+}
+#reservation-form-container .confirm-table th,
+#reservation-form-container .confirm-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--color-bg-sub);
+  font-size: 14px;
+  text-align: left;
+}
+#reservation-form-container .confirm-table th {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  width: 30%;
+  font-weight: normal;
+  vertical-align: middle;
+}
+#reservation-form-container .confirm-table td {
+  color: var(--color-text);
+  width: 70%;
+  word-break: break-all;
+}
+
+/* ボタンエリア */
+#reservation-form-container .button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+#reservation-form-container .submit-btn {
+  flex: 1;
+  padding: 12px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+#reservation-form-container .submit-btn:hover {
+  opacity: 0.85;
+}
+#reservation-form-container .back-btn {
+  flex: 1;
+  padding: 12px;
+  background: #b0b0b0;
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#reservation-form-container .back-btn:hover {
+  background: #999;
+}
+#reservation-form-container button:disabled {
+  background: #ccc !important;
+  cursor: not-allowed;
+}
+
+#reservation-form-container #status {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#reservation-form-container .back-link {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0;
+  text-align: center;
+  color: var(--color-text);
+  background-color: var(--color-bg-sub);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+#reservation-form-container .back-link:hover {
+  opacity: 0.8;
+}
+
+#reservation-form-container .readonly-field {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/* ============================================================
+   予約カレンダー：レスポンシブ対応（スマートフォン向け 600px 以下）
+   （reserve_form より移設）
+   ============================================================ */
+@media screen and (max-width: 600px) {
+  #reservation-calendar {
+    padding: 5px;
+  }
+
+  #reservation-calendar .calendar-card {
+    padding: 10px 5px;
+    overflow: visible; /* ポップアップをはみ出して表示 */
+  }
+
+  #reservation-calendar .day-name {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+  #reservation-calendar .day-cell {
+    min-height: 52px;
+    padding: 3px 2px;
+  }
+
+  #reservation-calendar .date-num {
+    font-size: 11px;
+  }
+
+  #reservation-calendar .status-area {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  #reservation-calendar .tooltip {
+    top: 50% !important;
+    bottom: auto !important;
+    left: calc(100% + 6px) !important;
+    right: auto !important;
+    transform: translateY(-50%) !important;
+    padding: 6px 10px;
+    min-width: 80px;
+  }
+
+  #reservation-calendar .tooltip::after {
+    top: 50% !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: 100% !important;
+    transform: translateY(-50%) !important;
+    border-color: transparent var(--color-primary) transparent transparent !important;
+  }
+
+  #reservation-calendar .time-slot-item {
+    font-size: 11px;
+    padding: 4px 0;
+  }
+
+  #reservation-calendar .day-cell:nth-child(7n-3) .tooltip,
+  #reservation-calendar .day-cell:nth-child(7n-2) .tooltip,
+  #reservation-calendar .day-cell:nth-child(7n-1) .tooltip,
+  #reservation-calendar .day-cell:nth-child(7n) .tooltip {
+    left: auto !important;
+    right: calc(100% + 6px) !important;
+  }
+
+  #reservation-calendar .day-cell:nth-child(7n-3) .tooltip::after,
+  #reservation-calendar .day-cell:nth-child(7n-2) .tooltip::after,
+  #reservation-calendar .day-cell:nth-child(7n-1) .tooltip::after,
+  #reservation-calendar .day-cell:nth-child(7n) .tooltip::after {
+    left: 100% !important;
+    right: auto !important;
+    border-color: transparent transparent transparent var(--color-primary) !important;
+  }
+}

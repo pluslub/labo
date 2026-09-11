@@ -1,15 +1,11 @@
-<?php
-$has_error  = isset($_GET['error']) && $_GET['error'] === '1';
-$send_error = isset($_GET['error']) && $_GET['error'] === '2';
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="./assets/images/favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ | Plusらぼ</title>
-    <meta name="description" content="Plusらぼへのお問い合わせはこちらから。見学・体験のご相談など、お気軽にお問い合わせください。">
+    <title>予約情報の入力 | Plusらぼ</title>
+    <meta name="description" content="見学予約の詳細情報をご入力ください。">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +14,6 @@ $send_error = isset($_GET['error']) && $_GET['error'] === '2';
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/common.css?v=20260606">
-    <link rel="stylesheet" href="css/contact.css?v=20260615">
     <link rel="stylesheet" href="css/reserve.css?v=20260908">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GEXX84LLRY"></script>
@@ -83,145 +78,142 @@ $send_error = isset($_GET['error']) && $_GET['error'] === '2';
 <main>
 
     <!-- ========== FV ========== -->
-    <section class="p-fv">
+    <section class="p-fv p-fv--reserve">
       <div class="p-fv__inner">
         <div class="p-fv__text">
-          <span class="c-label">Inquiry</span>
-          <h1 class="p-fv__title">お問い合わせ</h1>
-        </div>
-        <div class="p-fv__visual" aria-hidden="true">
-          <img src="./assets/images/contact-fv.svg" alt="" class="p-fv__illust">
+          <span class="c-label">Reservation</span>
+          <h1 class="p-fv__title">予約情報の入力</h1>
         </div>
       </div>
     </section>
 
-    <!-- ========== 見学予約（カレンダー） ========== -->
-    <section class="p-reserve-notice p-reserve-notice--embed" id="reserve">
+    <!-- ========== 見学方法のご案内 ========== -->
+    <section class="p-reserve-notice">
       <div class="p-reserve-notice__inner">
-        <h2 class="p-reserve-embed__title">見学予約</h2>
         <div class="p-reserve-notice__box">
-          <p class="p-reserve-notice__title">見学は「オンライン」「現地」どちらでも受け付けています</p>
+          <p class="p-reserve-notice__title">お名前とご連絡先をご入力ください</p>
           <p class="p-reserve-notice__text">
-            ご希望の日にちとお時間をカレンダーからお選びいただくと、そのまま予約フォームにお進みいただけます。<br>
-            実際に施設にお越しいただく現地見学のほか、ご自宅などから参加いただけるオンライン相談でも見学を受け付けています。<br>
-            <strong>オンラインでの見学をご希望の場合</strong>は、次の予約フォームにある「見学前に伝えておきたいこと」欄に、その旨をご記入ください。オンライン形式でご案内いたします。
+            <strong>オンラインでの見学をご希望の場合</strong>は、下の「見学前に伝えておきたいこと」欄にその旨をご記入ください。オンライン形式でご案内いたします。
           </p>
         </div>
       </div>
     </section>
 
+    <!-- ========== FORM ========== -->
     <section class="p-reserve">
       <div class="p-reserve__inner">
-      <div id="reservation-calendar">
-        <div class="calendar-card">
-          <div id="loading" class="calendar-loading">空き状況を確認しています</div>
+      <div id="reservation-form-container">
+        <!-- ステップナビゲーション -->
+        <div class="step-nav">
+          <div class="step-item active" id="step-1">入力</div>
+          <span class="step-arrow">❯</span>
+          <div class="step-item" id="step-2">確認</div>
+          <span class="step-arrow">❯</span>
+          <div class="step-item" id="step-3">完了</div>
+        </div>
 
-          <div id="calendar-area" style="display: none;">
-            <div class="calendar-header">
-              <button class="nav-btn" onclick="changeMonth(-1)">←</button>
-              <h3 id="currentMonthStr"></h3>
-              <button class="nav-btn" onclick="changeMonth(1)">→</button>
+        <!-- 確認画面専用のアラートメッセージ -->
+        <div class="confirm-alert-box" id="confirm-alert" style="display: none;">
+          お申し込みはまだ完了しておりません。以下の内容をご確認いただき、「申込完了」ボタンを押してください。<br>
+          完了画面が表示され、お申込内容のメールが届くと申し込み完了になります。
+        </div>
+
+        <div class="form-card">
+          <h2>予約フォーム</h2>
+
+          <form id="bookingForm" novalidate>
+            <input type="hidden" id="date">
+            <input type="hidden" id="time">
+
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label>お日にち</label>
+              </div>
+              <div class="readonly-field" id="display-date-text">2026-09-08</div>
             </div>
 
-            <div class="month-grid" id="monthGrid"></div>
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label>お時間</label>
+              </div>
+              <div class="readonly-field" id="display-time-text">11:00〜</div>
+            </div>
+
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="name">お名前（ニックネーム可）</label>
+                <span class="badge-required">必須</span>
+              </div>
+              <input type="text" id="name" placeholder="若竹 太郎">
+              <div class="error-box" id="error-name">⚠️ お名前を入力してください</div>
+            </div>
+
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="email">メールアドレス</label>
+                <span class="badge-required">必須</span>
+              </div>
+              <input type="email" id="email" placeholder="example@email.com">
+              <div class="error-box" id="error-email">⚠️ メールアドレスを正しく入力してください</div>
+            </div>
+
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="phone">電話番号</label>
+              </div>
+              <input type="tel" id="phone" placeholder="090-1234-5678">
+            </div>
+
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="comment">見学前に伝えておきたいこと</label>
+              </div>
+              <textarea id="comment" rows="3" placeholder="オンラインでの見学をご希望の場合はこちらにご記入ください"></textarea>
+            </div>
+
+            <button type="submit" id="toConfirmBtn" class="submit-btn">確認画面へ進む</button>
+          </form>
+
+          <!-- 確認画面 -->
+          <div id="confirmArea" style="display: none;">
+            <table class="confirm-table">
+              <tr>
+                <th>お日にち</th>
+                <td id="confirm-date">-</td>
+              </tr>
+              <tr>
+                <th>お時間</th>
+                <td id="confirm-time">-</td>
+              </tr>
+              <tr>
+                <th>お名前 <span class="badge-required">必須</span></th>
+                <td id="confirm-name">-</td>
+              </tr>
+              <tr>
+                <th>メールアドレス <span class="badge-required">必須</span></th>
+                <td id="confirm-email">-</td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td id="confirm-phone">-</td>
+              </tr>
+              <tr>
+                <th>見学前に伝えておきたいこと</th>
+                <td id="confirm-comment">-</td>
+              </tr>
+            </table>
+
+            <div class="button-group">
+              <button type="button" id="backToInputBtn" class="back-btn">戻る</button>
+              <button type="button" id="finalSubmitBtn" class="submit-btn">申込完了</button>
+            </div>
           </div>
+
+          <div id="status"></div>
+          <a href="contact.html#reserve" class="back-link">← カレンダーへ戻る</a>
         </div>
       </div>
       </div>
-    </section>
-
-    <!-- ========== FORM ========== -->
-    <section class="p-form">
-      <div class="p-form__inner">
-        <?php if ($has_error): ?>
-          <div class="p-form__alert" role="alert">
-            <p>入力内容に不備があります。必須項目をご確認の上、再度お送りください。</p>
-          </div>
-        <?php elseif ($send_error): ?>
-          <div class="p-form__alert" role="alert">
-            <p>送信中にエラーが発生しました。時間をおいて再度お試しいただくか、お電話（077-569-5697）にてお問い合わせください。</p>
-          </div>
-        <?php endif; ?>
-
-        <form class="p-form__body" action="contact-send.php" method="post">
-          <div class="p-form__field">
-            <label class="p-form__label" for="name">お名前</label>
-            <input
-              class="p-form__input"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="お名前"
-              autocomplete="name"
-              required
-            >
-          </div>
-
-          <div class="p-form__field">
-            <label class="p-form__label" for="tel">電話番号</label>
-            <input
-              class="p-form__input"
-              type="tel"
-              id="tel"
-              name="tel"
-              placeholder="電話番号"
-              autocomplete="tel"
-            >
-          </div>
-
-          <div class="p-form__field">
-            <label class="p-form__label" for="email">メールアドレス</label>
-            <input
-              class="p-form__input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="メールアドレス"
-              autocomplete="email"
-              required
-            >
-          </div>
-
-          <div class="p-form__field">
-            <label class="p-form__label" for="message">お問い合わせ内容</label>
-            <textarea
-              class="p-form__textarea"
-              id="message"
-              name="message"
-              placeholder="お問い合わせ内容"
-              rows="8"
-              required
-            ></textarea>
-          </div>
-
-          <!-- ハニーポット（ボットトラップ） -->
-          <div style="display:none" aria-hidden="true">
-            <label for="website">ウェブサイト</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-
-          <div class="p-form__submit">
-            <button type="submit" class="p-form__submit-btn">送信する</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ========== CTA ========== -->
-    <section class="p-cta">
-        <div class="p-cta__inner">
-            <div class="p-cta__visual">
-                <img src="./assets/images/cta-illust.png" alt="">
-            </div>
-            <div class="p-cta__body">
-                <h2 class="p-cta__title">ちょっとしたことでも<br>ご相談ください</h2>
-                <p class="p-cta__text">気になることや、体験に関するご相談は常時受け付けておりますので、遠慮なくお問い合わせください。</p>
-                <a href="contact.html" class="c-btn c-btn--dark">
-                    話を聞いてみる
-                    <span class="c-btn__icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
     </section>
 
 </main>
