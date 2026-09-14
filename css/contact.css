@@ -21,7 +21,6 @@ body {
   padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: clamp(24px, calc(48 / 1728 * 100vw), 48px);
   min-height: clamp(300px, calc(440 / 1728 * 100vw), 440px);
 }
@@ -29,8 +28,11 @@ body {
 .p-fv__text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: clamp(10px, calc(14 / 1728 * 100vw), 14px);
   padding-bottom: clamp(48px, calc(80 / 1728 * 100vw), 80px);
+  /* 他の下層ページ（about/service-business/service-work）のFVと同様に左側を内側へ寄せる */
+  padding-left: clamp(48px, calc(296 / 1728 * 100vw), 296px);
 }
 
 .p-fv__title {
@@ -40,9 +42,12 @@ body {
   color: var(--color-primary);
 }
 
+.c-label {
+  color: var(--color-accent-lime);
+}
+
 .p-fv__visual {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
 
@@ -62,9 +67,20 @@ body {
 }
 
 .p-form__inner {
-  max-width: 680px;
+  /* 上の「見学予約」お知らせボックス（760px中央寄せ）と両端を揃える。
+     デスクトップではmax-widthのみで端の余白を確保するのでpadding-inlineは持たせない
+     （スマホ用のpadding-inlineは下部のメディアクエリで別途指定） */
+  max-width: 760px;
+  width: 100%;
   margin-inline: auto;
-  padding-inline: clamp(20px, calc(48 / 1728 * 100vw), 48px);
+}
+
+.p-form__title {
+  color: var(--color-primary);
+  font-size: clamp(20px, calc(32 / 1728 * 100vw), 32px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: clamp(16px, calc(20 / 1728 * 100vw), 20px);
 }
 
 .p-form__body {

@@ -152,7 +152,8 @@ body {
    ============================================================ */
 
 #reservation-calendar {
-  max-width: 800px;
+  /* 「見学予約」お知らせボックス・その他お問い合わせフォームと両端を揃える */
+  max-width: 760px;
   margin-inline: auto;
   padding: 20px;
   color: var(--color-text);
